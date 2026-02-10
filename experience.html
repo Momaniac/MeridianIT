@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vida estudiantil en Meridian: Hackathons, clubes de especialización, mentorías y una comunidad global de ingenieros.">
+    <title>Meridian Institute of Technology | La Experiencia</title>
+    <!-- Open Graph / Social Media Metatags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meridian.edu.mx/experience.html">
+    <meta property="og:title" content="Meridian Institute of Technology | La Experiencia">
+    <meta property="og:description" content="Vida estudiantil en Meridian: Hackathons, clubes de especialización, mentorías y una comunidad global de ingenieros.">
+    <meta property="og:image" content="https://meridian.edu.mx/assets/social-share.jpg">
+
+    <link rel="icon" href="assets/meridian-logo-tab.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Hoja de Estilos Maestra -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header class="main-header glass-effect">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-meridian.jpg" alt="Meridian Institute of Technology Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="institute.html" class="nav-link">El Instituto</a></li>
+                    <li><a href="programs.html" class="nav-link">Oferta Académica</a></li>
+                    <li><a href="certifications.html" class="nav-link">Certificaciones</a></li>
+                    <li><a href="experience.html" class="nav-link" style="color: var(--primary-color);">La
+                            Experiencia</a></li>
+                    <li><a href="careers.html" class="nav-link">Carreras</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="admissions.html" class="btn btn-primary">Admisiones</a>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO EXPERIENCE -->
+        <section class="hero-section">
+            <div class="hero-bg-overlay"
+                style="background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);"></div>
+            <!-- Imagen sugerida: grupo diverso de estudiantes colaborando o riendo -->
+            <img src="assets/experience-bg.jpg" alt="Comunidad Meridian" class="hero-bg-img" width="1408" height="736">
+
+            <div class="container hero-content">
+                <span class="hero-eyebrow">Student Life</span>
+                <h1 class="hero-title">Una comunidad sin límites físicos.</h1>
+                <p class="hero-subtitle">
+                    Meridian no es solo un lugar para estudiar código. Es un ecosistema vivo de pensadores,
+                    constructores y futuros líderes tech.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. MANIFESTO DE COMUNIDAD -->
+        <section class="section-padding text-center">
+            <div class="container">
+                <h2 class="section-title">Pertenencia y Excelencia</h2>
+                <p class="section-desc">
+                    El aprendizaje técnico es individual, pero el crecimiento profesional es colectivo. Aquí construyes
+                    tu red de contactos desde el primer día.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. SPECIALIZATION CLUBS (Reutilizando experience-card) -->
+        <section class="section-padding dark-bg">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" style="color: white;">Clubes de Especialización</h2>
+                    <p class="section-desc">Espacios extracurriculares liderados por estudiantes y mentores.</p>
+                </div>
+
+                <div class="experience-grid">
+                    <!-- Club 1: AI -->
+                    <article class="experience-card bg-image" style="background-image: url('assets/club-ai.jpg');">
+                        <div class="card-overlay">
+                            <span class="card-tag" style="background: rgba(138, 21, 56, 0.8);">Trending</span>
+                            <h3>AI & Data Science</h3>
+                            <p>Exploración de machine learning, modelos predictivos y ética en IA.</p>
+                        </div>
+                    </article>
+
+                    <!-- Club 2: Security -->
+                    <article class="experience-card bg-image"
+                        style="background-image: url('assets/club-security.jpg');">
+                        <div class="card-overlay">
+                            <span class="card-tag">Red Team</span>
+                            <h3>Cybersecurity Squad</h3>
+                            <p>Retos de Capture The Flag (CTF) y prácticas de hacking ético.</p>
+                        </div>
+                    </article>
+
+                    <!-- Club 3: Cloud/DevOps -->
+                    <article class="experience-card bg-image" style="background-image: url('assets/club-devops.jpg');">
+                        <div class="card-overlay">
+                            <span class="card-tag">Infrastructure</span>
+                            <h3>DevOps Lab</h3>
+                            <p>Automatización, Kubernetes y arquitectura serverless.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EVENTOS CLAVE (Lista Alternada o Timeline Simplificado) -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title text-center" style="margin-bottom: 3rem;">Momentos que Definen tu Carrera</h2>
+
+                <div class="split-layout" style="margin-bottom: 4rem;">
+                    <div class="text-content">
+                        <span class="tag" style="color: var(--primary-color); background: rgba(138, 21, 56, 0.1);">El
+                            Inicio</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">La Semana
+                            Cero</h3>
+                        <p style="color: #64748b; margin-bottom: 1rem;">
+                            Tu primer contacto con la intensidad de Meridian. No es la típica semana de inducción con
+                            charlas aburridas.
+                        </p>
+                        <p style="color: #64748b;">
+                            Es un bootcamp de 5 días diseñado para configurar tu entorno de desarrollo, conocer a tu
+                            squad, entender la metodología ágil y lanzar tu primer "Hello World" a producción.
+                        </p>
+                    </div>
+                    <div class="visual-content">
+                        <img src="assets/week-zero.jpg" alt="Estudiantes en Semana Cero"
+                            style="border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+
+                <div class="split-layout" style="flex-direction: row-reverse;">
+                    <!-- Nota: CSS Grid maneja el orden visual, pero en mobile stackea normal -->
+                    <div class="visual-content">
+                        <img src="assets/demo-day.jpg" alt="Presentación de Proyectos"
+                            style="border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    </div>
+                    <div class="text-content">
+                        <span class="tag" style="color: var(--primary-color); background: rgba(138, 21, 56, 0.1);">El
+                            Cierre</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Demo Day &
+                            Feria de Proyectos</h3>
+                        <p style="color: #64748b; margin-bottom: 1rem;">
+                            Cada trimestre finaliza con una exposición real. No presentas ante profesores, presentas
+                            ante reclutadores y líderes técnicos invitados.
+                        </p>
+                        <p style="color: #64748b;">
+                            Es tu oportunidad para mostrar tu portafolio, defender tus decisiones técnicas y recibir
+                            feedback directo de la industria.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MENTORÍA -->
+        <section class="section-padding" style="background-color: var(--gray-bg);">
+            <div class="container text-center">
+                <h2 class="section-title">Nunca caminas solo</h2>
+                <div class="grid-3-col" style="margin-top: 3rem;">
+                    <div class="card-feature" style="background: white;">
+                        <i class="fa-solid fa-user-tie"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4>Academic Success Coach</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Te ayuda a mantener el ritmo, gestionar el tiempo
+                            y superar bloqueos de aprendizaje.</p>
+                    </div>
+                    <div class="card-feature" style="background: white;">
+                        <i class="fa-solid fa-code"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4>Technical Mentors</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Ingenieros Senior que revisan tu código
+                            semanalmente y te dan feedback de nivel industrial.</p>
+                    </div>
+                    <div class="card-feature" style="background: white;">
+                        <i class="fa-solid fa-handshake"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4>Career Advisors</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Expertos en RRHH que pulen tu CV, LinkedIn y te
+                            preparan para entrevistas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section theme-red">
+            <div class="container text-center">
+                <h2 class="cta-title">Encuentra tu tribu.</h2>
+                <p class="cta-text">Rodéate de personas que comparten tu ambición y tus estándares.</p>
+                <a href="admissions.html" class="btn btn-white">Únete a Meridian</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer dark-bg">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/logo-meridian-bco.png" alt="Meridian Logo" class="footer-logo">
+                    <p>Engineering the next generation.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Instituto</h4>
+                        <ul>
+                            <li><a href="institute.html">Filosofía</a></li>
+                            <li><a href="experience.html">Experiencia</a></li>
+                            <li><a href="sitemap.html">Mapa del Sitio</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Academia</h4>
+                        <ul>
+                            <li><a href="programs.html">Programas</a></li>
+                            <li><a href="certifications.html">Certificaciones</a></li>
+                            <li><a href="admissions.html">Admisiones</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li>CDMX, México</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Meridian Institute of Technology. Todos los derechos reservados.</p>
+                <div class="footer-legal-links" style="margin-left: auto; margin-right: 2rem;">
+                    <a href="privacy.html" style="color: #64748b; font-size: 0.85rem; margin-right: 1rem;">Aviso de Privacidad</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Global -->
+    <script src="main.js"></script>
+</body>
+
+</html>

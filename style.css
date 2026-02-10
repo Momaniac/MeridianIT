@@ -1,0 +1,1143 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Paleta de Colores - Meridian Institute of Technology */
+    --primary-color: #791D1A;
+    /* Principal - Rojo Profundo */
+    --primary-hover: #5a1513;
+    --secondary-color: #081127;
+    /* Secundario Principal - Navy Oscuro */
+    --accent-color: #1A2641;
+    /* Secundario Refuerzo - Azul Acero Oscuro */
+
+    --dark-bg: #050505;
+    /* Fondo casi negro para secciones oscuras */
+    --light-bg: #ffffff;
+    --gray-bg: #f8fafc;
+
+    --text-main: #334155;
+    /* Gris oscuro para lectura */
+    --text-light: #f1f5f9;
+    /* Texto sobre fondos oscuros */
+
+    /* Tipografía */
+    --font-display: 'Baskervville', serif;
+    /* Títulos y Encabezados */
+    --font-body: 'Inter', sans-serif;
+    /* Párrafos y UI */
+
+    /* UI Elements */
+    --border-radius: 4px;
+    /* Un poco más cuadrado para seriedad académica */
+    --transition: all 0.3s ease;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+    /* Previene scroll horizontal indeseado */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   2. UTILITIES & LAYOUT
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Fondos y Temas */
+.dark-bg {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.theme-red {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Efecto Vidrio (Glassmorphism) */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   3. COMPONENTS: BUTTONS
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    /* Estilo píldora moderno */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-light);
+    color: var(--dark-bg);
+}
+
+.btn-white {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.btn-white:hover {
+    background-color: var(--gray-bg);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    /* Ajusta según tu logo real */
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    /* Oculto en desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    /* Casi pantalla completa */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: -80px;
+    /* Compensa el header fixed */
+    padding-top: 80px;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-left: 5%;
+    /* Alineación ligeramente a la izquierda */
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    color: #e2e8f0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* =========================================
+   6. SECTIONS STYLING
+   ========================================= */
+
+/* Differential (Features) */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.dark-bg .section-title {
+    color: white;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dark-bg .section-desc {
+    color: #94a3b8;
+}
+
+.card-feature {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-top: 4px solid transparent;
+}
+
+.card-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Educational Model (Split Layout) */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.process-list {
+    margin-top: 2rem;
+}
+
+.process-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.process-number {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.process-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.process-info p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.model-graphic-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+/* Partners (Logos) */
+.partners-label {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    color: #94a3b8;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.partner-logo {
+    height: 35px;
+    /* Ajuste para uniformidad */
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Experience (Slider Look) */
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.link-arrow {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.link-arrow:hover {
+    gap: 0.8rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.experience-card {
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    transition: var(--transition);
+}
+
+.experience-card:hover::before {
+    background: linear-gradient(to top, var(--primary-color) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1.5rem;
+    color: white;
+    width: 100%;
+}
+
+.card-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.experience-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+/* CTA Final */
+.cta-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+.main-footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    max-width: 300px;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    height: 35px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 4rem;
+}
+
+.link-column h4 {
+    color: white;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-display);
+}
+
+.link-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.link-column ul li a {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.link-column ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+/* =========================================
+   8. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .grid-3-col,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nav-list {
+        display: none;
+        /* Aquí iría la lógica JS para menú móvil */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-actions .btn {
+        display: none;
+        /* Oculta botón de admisión en móvil para simplificar, o ajusta */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .grid-3-col,
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Añadir dentro de @media (max-width: 992px) */
+    .nav-list.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 2rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #eee;
+    }
+}
+
+/* =========================================
+   9. FORMS (Add to style.css)
+   ========================================= */
+.form-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f8fafc;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.1);
+}
+
+/* Ajuste móvil para formularios */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* =========================================
+   10. APP MOCKUP (New Feature)
+   ========================================= */
+.app-device-mockup {
+    width: 300px;
+    height: 580px;
+    background-color: #0f172a;
+    /* Marco del teléfono */
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 4px solid #334155;
+}
+
+.app-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f5f9;
+    /* Fondo de la pantalla */
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header (Status Bar) */
+.app-header {
+    background-color: white;
+    padding: 15px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0f172a;
+    z-index: 10;
+}
+
+.app-status-icons {
+    display: flex;
+    gap: 5px;
+}
+
+/* Body */
+.app-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 15px 20px;
+    /* Ocultar barra de scroll */
+    scrollbar-width: none;
+}
+
+.app-body::-webkit-scrollbar {
+    display: none;
+}
+
+.app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Cards inside App */
+.app-card {
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.app-card-title {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Chart */
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.chart-bar {
+    width: 12%;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    position: relative;
+    height: 0;
+    /* JS or Animation will fill this */
+    transition: height 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chart-bar.animate {
+    height: var(--h);
+}
+
+.chart-bar::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: #94a3b8;
+}
+
+.app-stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stat-value.warning {
+    color: #ef4444;
+}
+
+/* Ratings */
+.rating-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.app-text-sm {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* FAB */
+.app-fab {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(121, 29, 26, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.app-fab:hover {
+    transform: scale(1.1);
+}
+
+/* Home Indicator */
+.app-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 5px;
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Animation triggers */
+@keyframes growBar {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--h);
+    }
+}
+
+/* =========================================
+   11. VISUAL DEMOS (New Feature for Certifications)
+   ========================================= */
+
+/* Quiz Simulator */
+.app-quiz-card {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.quiz-question {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.quiz-option.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(121, 29, 26, 0.05);
+}
+
+.quiz-option.correct {
+    border-color: #22c55e;
+    background-color: rgba(34, 197, 94, 0.1);
+}
+
+.option-circle {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-option.selected .option-circle {
+    border-color: var(--primary-color);
+}
+
+.quiz-option.selected .option-circle::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.quiz-option.correct .option-circle {
+    border-color: #22c55e;
+}
+
+.quiz-option.correct .option-circle::after {
+    content: '\f00c';
+    /* FontAwesome check */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 10px;
+    color: #22c55e;
+    background: none;
+}
+
+.option-text {
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+/* Certificate Card */
+.certificate-preview {
+    background: #fffdf5;
+    /* Off-white paper color */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.cert-border {
+    border: 2px double #94a3b8;
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.cert-logo-small {
+    width: 30px;
+    margin: 0 auto 0.5rem;
+    opacity: 0.8;
+}
+
+.cert-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.cert-recipient {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.cert-body {
+    font-size: 0.7rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.cert-seal {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #d4af37;
+    /* Gold */
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+/* Metrics Mini-Chart */
+.metric-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.metric-info {
+    flex: 1;
+}
+
+.metric-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.3rem;
+}
+
+.metric-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.metric-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    width: var(--w);
+}
+
+.scroll-container {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+    /* Space for scrollbar if visible */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
