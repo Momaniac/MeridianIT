@@ -1141,3 +1141,167 @@ textarea:focus {
     scrollbar-width: none;
     /* Firefox */
 }
+
+/* =========================================
+   11. METIA — Maestría Ejecutiva Online
+   ========================================= */
+.metia-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.metia-section:hover {
+    border-top-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.metia-heading {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+    color: var(--secondary-color);
+}
+
+.metia-subheading {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--primary-color);
+}
+
+.metia-list {
+    list-style: none;
+    margin-bottom: 1.25rem;
+    padding-left: 0.5rem;
+}
+
+.metia-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.metia-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.metia-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.metia-info-card {
+    background: var(--gray-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+}
+
+.metia-info-card:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.metia-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+    border: 1px solid #e2e8f0;
+}
+
+.metia-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.metia-table th,
+.metia-table td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.metia-table th {
+    background: var(--gray-bg);
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.metia-table tr:last-child td {
+    border-bottom: none;
+}
+
+.metia-table tr:hover td {
+    background: var(--gray-bg);
+}
+
+.metia-blockquote {
+    background: #fef2f2;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.metia-blockquote strong {
+    color: var(--primary-color);
+    font-style: normal;
+}
+
+.metia-bar-80-20 {
+    display: flex;
+    gap: 0;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.metia-bar-80 {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    flex: 4;
+    text-align: center;
+    font-weight: 600;
+}
+
+.metia-bar-20 {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .metia-section {
+        padding: 1.5rem;
+    }
+
+    .metia-heading {
+        font-size: 1.25rem;
+    }
+}
