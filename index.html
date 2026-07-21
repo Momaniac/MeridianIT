@@ -33,6 +33,13 @@
 
 <body>
 
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
+
     <!-- NAV DE NAVEGACIÓN -->
     <header class="main-header glass-effect">
         <div class="container nav-container">
@@ -67,8 +74,7 @@
         <section class="hero-section">
             <div class="hero-bg-overlay"></div>
             <!-- Imagen de fondo sugerida: assets/hero-bg.jpg -->
-            <img src="assets/hero-bg.jpg" alt="Campus Tecnológico Meridian" class="hero-bg-img" width="1408"
-                height="736">
+            <img src="assets/hero-bg.jpg" alt="Campus Tecnológico Meridian" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">The New Standard</span>
@@ -88,6 +94,7 @@
         <section class="section-padding differential-section">
             <div class="container">
                 <div class="section-header text-center">
+                    <span class="section-eyebrow">Nuestra Filosofía</span>
                     <h2 class="section-title">¿Por qué Meridian?</h2>
                     <p class="section-desc">Tres pilares que redefinen la educación tecnológica.</p>
                 </div>
@@ -197,7 +204,10 @@
         <section class="section-padding experience-section">
             <div class="container">
                 <div class="section-header-row">
-                    <h2 class="section-title">Vida Académica Digital</h2>
+                    <div>
+                        <span class="section-eyebrow">La Experiencia</span>
+                        <h2 class="section-title">Vida Académica Digital</h2>
+                    </div>
                     <a href="experience.html" class="link-arrow">Ver toda la experiencia <i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -239,6 +249,133 @@
             </div>
         </section>
 
+        <!-- CALCULADORA DE BECAS -->
+        <section id="calculadora-becas" class="section-padding scholarship-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" style="color: white;">Calcula tu Beca</h2>
+                    <p class="section-desc">Descubre en 30 segundos el porcentaje de beca al que podrías acceder.</p>
+                </div>
+
+                <div id="scholarship-wizard" class="scholarship-wizard">
+                    <div class="wizard-progress">
+                        <div class="wizard-progress-fill"></div>
+                    </div>
+
+                    <!-- STEP 1: Program -->
+                    <div class="wizard-step wizard-step-active" data-step="0">
+                        <p class="wizard-step-label">Paso 1 de 3</p>
+                        <h3 class="wizard-step-title">¿Qué programa te interesa?</h3>
+                        <div class="program-options">
+                            <div class="program-option" data-program="Licenciatura en Ingeniería en Software Full Stack">
+                                <i class="fa-solid fa-code"></i>
+                                <span>Licenciatura en Ingeniería en Software Full Stack</span>
+                            </div>
+                            <div class="program-option" data-program="Maestría Ejecutiva en Tecnología e IA">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>Maestría Ejecutiva en Tecnología e IA</span>
+                            </div>
+                            <div class="program-option" data-program="Cursos de Certificación Internacional">
+                                <i class="fa-solid fa-certificate"></i>
+                                <span>Cursos de Certificación Internacional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Average -->
+                    <div class="wizard-step" data-step="1">
+                        <button class="wizard-back" data-step="0"><i class="fa-solid fa-arrow-left"></i> Atrás</button>
+                        <p class="wizard-step-label">Paso 2 de 3</p>
+                        <h3 class="wizard-step-title">¿Cuál es tu promedio académico actual?</h3>
+                        <div class="slider-container">
+                            <div class="slider-track">
+                                <div class="slider-track-fill"></div>
+                            </div>
+                            <input type="range" id="avg-slider" min="6.0" max="10.0" step="0.1" value="8.0">
+                        </div>
+                        <div class="avg-display">
+                            <div class="avg-number" id="avg-value">8.0</div>
+                            <div class="avg-label">Promedio General</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <button id="step2-next" class="btn btn-primary">Continuar</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Location -->
+                    <div class="wizard-step" data-step="2">
+                        <button class="wizard-back" data-step="1"><i class="fa-solid fa-arrow-left"></i> Atrás</button>
+                        <p class="wizard-step-label">Paso 3 de 3</p>
+                        <h3 class="wizard-step-title">¿Dónde te encuentras?</h3>
+                        <div class="modality-options">
+                            <div class="modality-btn" data-modality="Dentro de México">
+                                <i class="fa-solid fa-flag"></i>
+                                <span>Dentro de México</span>
+                                <small>República Mexicana</small>
+                            </div>
+                            <div class="modality-btn" data-modality="Fuera de México">
+                                <i class="fa-solid fa-globe"></i>
+                                <span>Fuera de México</span>
+                                <small>Internacional</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CALCULATING -->
+                    <div class="wizard-calculating">
+                        <div class="calc-spinner"></div>
+                        <p class="calc-text">Calculando tu pre-aprobación de beca<span class="calc-dots"></span></p>
+                    </div>
+
+                    <!-- RESULT + GATED FORM -->
+                    <div class="wizard-result">
+                        <div class="result-badge">Perfil Pre-Aprobado</div>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 0.5rem;">Beca estimada para <strong id="result-program" style="color: white;"></strong></p>
+                        <div class="result-scholarship-number">Hasta <span id="result-scholarship"></span></div>
+                        <p class="result-scholarship-label">de descuento en tu inscripción</p>
+                        <p class="result-message" id="result-message"></p>
+
+                        <div class="gated-form">
+                            <p style="color: white; font-weight: 600; margin-bottom: 0.75rem; text-align: center;">Ingresa tus datos para recibir el tabulador exacto</p>
+                            <form id="scholarship-form" action="https://formsubmit.co/hola@meridianitec.com" method="POST">
+                                <input type="hidden" name="_subject" value="Lead Calculadora de Beca - Meridian">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="programa_interes" value="">
+                                <input type="hidden" name="promedio" value="">
+                                <input type="hidden" name="ubicacion" value="">
+                                <input type="hidden" name="beca_estimada" value="">
+
+                                <div class="form-group">
+                                    <label for="scholar-name">Nombre completo</label>
+                                    <input type="text" id="scholar-name" name="nombre" required placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="scholar-email">Correo electrónico</label>
+                                    <input type="email" id="scholar-email" name="email" required placeholder="tu@correo.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="scholar-phone">WhatsApp</label>
+                                    <input type="tel" id="scholar-phone" name="whatsapp" required placeholder="+52 55 1234 5678">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar y recibir mi tabulador</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- THANK YOU -->
+                    <div class="wizard-thankyou">
+                        <div class="thankyou-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3 class="thankyou-title">¡Gracias por tu interés!</h3>
+                        <p class="thankyou-text">Un asesor de admisiones se pondrá en contacto contigo en las próximas 24 horas con tu tabulador personalizado.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="programs.html" class="btn btn-primary">Explorar Plan de Estudios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CALL TO ACTION FINAL -->
         <section class="cta-section theme-red">
             <div class="container text-center">
@@ -250,60 +387,78 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="main-footer dark-bg">
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
                     <img src="assets/logo-meridian-bco.png" alt="Meridian Institute of Technology Logo"
                         class="footer-logo">
-                    <p>Engineering the next generation.</p>
+                    <p>Engineering the next generation. Formamos ingenieros para la próxima era tecnológica.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="mailto:hola@meridianitec.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
                 </div>
 
-                <div class="footer-links">
-                    <div class="link-column">
-                        <h4>Instituto</h4>
-                        <ul>
-                            <li><a href="institute.html">Filosofía</a></li>
-                            <li><a href="experience.html">Experiencia</a></li>
-                            <li><a href="sitemap.html">Mapa del Sitio</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-column">
-                        <h4>Academia</h4>
-                        <ul>
-                            <li><a href="programs.html">Programas</a></li>
-                            <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
-                            <li><a href="certifications.html">Certificaciones</a></li>
-                            <li><a href="admissions.html">Admisiones</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-column">
-                        <h4>Contacto</h4>
-                        <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
-                            <li>CDMX, México</li>
-                        </ul>
-                    </div>
+                <div class="link-column">
+                    <h4>Instituto</h4>
+                    <ul>
+                        <li><a href="institute.html">El Instituto</a></li>
+                        <li><a href="experience.html">La Experiencia</a></li>
+                        <li><a href="careers.html">Carreras</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-column">
+                    <h4>Academia</h4>
+                    <ul>
+                        <li><a href="programs.html">Oferta Académica</a></li>
+                        <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
+                        <li><a href="certifications.html">Certificaciones</a></li>
+                        <li><a href="gantt-programa.html">Calendario Gantt</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-column">
+                    <h4>Admisiones</h4>
+                    <ul>
+                        <li><a href="admissions.html">Proceso de Admisión</a></li>
+                        <li><a href="index.html#calculadora-becas">Calculadora de Becas</a></li>
+                        <li><a href="sitemap.html">Mapa del Sitio</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
+                        <li>CDMX, México</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Meridian Institute of Technology. Todos los derechos reservados.</p>
-                <div class="footer-legal-links" style="margin-left: auto; margin-right: 2rem;">
-                    <a href="privacy.html" style="color: #64748b; font-size: 0.85rem; margin-right: 1rem;">Aviso de
-                        Privacidad</a>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <div class="footer-legal-links">
+                    <a href="privacy.html">Aviso de Privacidad</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20las%20licenciaturas%20de%20Meridian" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+    <div id="social-proof-container" class="social-proof-container"></div>
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>

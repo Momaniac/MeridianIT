@@ -33,6 +33,13 @@
 
 <body>
 
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
+
     <!-- NAV -->
     <header class="main-header glass-effect">
         <div class="container nav-container">
@@ -65,13 +72,12 @@
     <main>
         <!-- 1. HERO CAREERS -->
         <section class="hero-section">
-            <div class="hero-bg-overlay"
-                style="background: linear-gradient(to right, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.6) 100%);"></div>
+            <div class="hero-bg-overlay"></div>
             <!-- Imagen sugerida: ambiente corporativo moderno o entrevista -->
-            <img src="assets/careers-bg.jpg" alt="Entorno Profesional" class="hero-bg-img" width="1408" height="736">
+            <img src="assets/careers-bg.jpg" alt="Entorno Profesional" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
-                <span class="hero-eyebrow">Impacto Profesional</span>
+                <span class="hero-eyebrow">Licenciatura en Ingeniería en Software Full Stack · Impacto Profesional</span>
                 <h1 class="hero-title">Preparado para la industria. Posicionado para crecer.</h1>
                 <p class="hero-subtitle">
                     La educación técnica es solo la mitad de la ecuación. En Meridian, diseñamos tu perfil profesional
@@ -225,6 +231,177 @@
             </div>
         </section>
 
+        <!-- TEST VOCACIONAL EXPRESS -->
+        <section id="test-vocacional" class="section-padding vocational-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" style="color: white;">Test Vocacional Express</h2>
+                    <p class="section-desc">5 preguntas rápidas para descubrir tu perfil ideal en tecnología.</p>
+                </div>
+
+                <div id="vocational-test" class="vocational-test">
+                    <div class="voc-progress">
+                        <div class="voc-progress-fill"></div>
+                    </div>
+
+                    <!-- Question 1 -->
+                    <div class="voc-question" data-question="0">
+                        <p class="voc-question-label">Pregunta 1 de 5</p>
+                        <h3 class="voc-question-title">¿Qué tipo de actividad disfrutas más?</h3>
+                        <div class="voc-answers">
+                            <div class="voc-answer" data-tags="lógica,tecnología">
+                                <i class="fa-solid fa-puzzle-piece"></i>
+                                <span>Resolver problemas lógicos y acertijos</span>
+                            </div>
+                            <div class="voc-answer" data-tags="crear,diseño">
+                                <i class="fa-solid fa-palette"></i>
+                                <span>Crear y diseñar cosas visualmente atractivas</span>
+                            </div>
+                            <div class="voc-answer" data-tags="personas,comunicar">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Organizar y liderar proyectos con personas</span>
+                            </div>
+                            <div class="voc-answer" data-tags="datos,investigar">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                <span>Analizar datos y encontrar patrones ocultos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="voc-question" data-question="1">
+                        <p class="voc-question-label">Pregunta 2 de 5</p>
+                        <h3 class="voc-question-title">¿Cómo prefieres trabajar?</h3>
+                        <div class="voc-answers">
+                            <div class="voc-answer" data-tags="individual,lógica">
+                                <i class="fa-solid fa-user"></i>
+                                <span>Concentrado en solitario, resolviendo a mi ritmo</span>
+                            </div>
+                            <div class="voc-answer" data-tags="equipo,comunicar">
+                                <i class="fa-solid fa-users"></i>
+                                <span>En equipo, intercambiando ideas constantemente</span>
+                            </div>
+                            <div class="voc-answer" data-tags="liderazgo,personas">
+                                <i class="fa-solid fa-chess-king"></i>
+                                <span>Dirigiendo y coordinando al equipo</span>
+                            </div>
+                            <div class="voc-answer" data-tags="crear,tecnología">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <span>Construyendo prototipos y experimentando</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="voc-question" data-question="2">
+                        <p class="voc-question-label">Pregunta 3 de 5</p>
+                        <h3 class="voc-question-title">¿Qué materia te resulta más interesante?</h3>
+                        <div class="voc-answers">
+                            <div class="voc-answer" data-tags="lógica,datos">
+                                <i class="fa-solid fa-square-root-variable"></i>
+                                <span>Matemáticas y estadística</span>
+                            </div>
+                            <div class="voc-answer" data-tags="diseño,crear">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                                <span>Diseño y comunicación visual</span>
+                            </div>
+                            <div class="voc-answer" data-tags="sistemas,tecnología">
+                                <i class="fa-solid fa-network-wired"></i>
+                                <span>Redes, sistemas y cómo funciona internet</span>
+                            </div>
+                            <div class="voc-answer" data-tags="liderazgo,equipo">
+                                <i class="fa-solid fa-handshake"></i>
+                                <span>Administración y negocios</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="voc-question" data-question="3">
+                        <p class="voc-question-label">Pregunta 4 de 5</p>
+                        <h3 class="voc-question-title">¿Qué te gustaría lograr con tu carrera?</h3>
+                        <div class="voc-answers">
+                            <div class="voc-answer" data-tags="crear,tecnología">
+                                <i class="fa-solid fa-rocket"></i>
+                                <span>Crear aplicaciones o productos que use la gente</span>
+                            </div>
+                            <div class="voc-answer" data-tags="datos,investigar">
+                                <i class="fa-solid fa-brain"></i>
+                                <span>Descubrir insights valiosos con inteligencia artificial</span>
+                            </div>
+                            <div class="voc-answer" data-tags="sistemas,lógica">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Proteger sistemas y datos de amenazas</span>
+                            </div>
+                            <div class="voc-answer" data-tags="personas,liderazgo">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                <span>Liderar equipos de tecnología en empresas grandes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="voc-question" data-question="4">
+                        <p class="voc-question-label">Pregunta 5 de 5</p>
+                        <h3 class="voc-question-title">¿Con qué frase te identificas más?</h3>
+                        <div class="voc-answers">
+                            <div class="voc-answer" data-tags="lógica,individual">
+                                <i class="fa-solid fa-code"></i>
+                                <span>“Prefiero pasar horas debuggeando que hacer una presentación”</span>
+                            </div>
+                            <div class="voc-answer" data-tags="diseño,personas">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>“Me importa tanto cómo se ve algo como cómo funciona”</span>
+                            </div>
+                            <div class="voc-answer" data-tags="datos,sistemas">
+                                <i class="fa-solid fa-server"></i>
+                                <span>“Me fascina entender cómo se conecta todo por detrás”</span>
+                            </div>
+                            <div class="voc-answer" data-tags="equipo,comunicar">
+                                <i class="fa-solid fa-comments"></i>
+                                <span>“Mi fortaleza es comunicar ideas y motivar al equipo”</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESULTS -->
+                    <div class="voc-results">
+                        <h3 class="voc-results-title">¡Tu perfil tecnológico!</h3>
+                        <p class="voc-results-subtitle">Según tus respuestas, estas son las carreras que más se alinean contigo:</p>
+                        <div id="voc-career-cards" class="voc-career-cards"></div>
+
+                        <div class="voc-gated-form">
+                            <p style="color: white; font-weight: 600; margin-bottom: 0.75rem; text-align: center;">Ingresa tu correo para recibir el plan de estudios detallado</p>
+                            <form id="voc-form" action="https://formsubmit.co/hola@meridianitec.com" method="POST">
+                                <input type="hidden" name="_subject" value="Lead Test Vocacional - Meridian">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <div class="form-group">
+                                    <label for="voc-name">Nombre</label>
+                                    <input type="text" id="voc-name" name="nombre" required placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="voc-email">Correo electrónico</label>
+                                    <input type="email" id="voc-email" name="email" required placeholder="tu@correo.com">
+                                </div>
+                                <button type="submit" class="btn btn-purple">Ver plan de estudios detallado</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- THANK YOU -->
+                    <div class="voc-thankyou">
+                        <div class="thankyou-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3 class="thankyou-title">¡Listo!</h3>
+                        <p class="thankyou-text">Te enviamos el plan de estudios a tu correo. ¡Revisa tu bandeja de entrada!</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="admissions.html" class="btn btn-primary">Aplicar a Meridian</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA FINAL -->
         <section class="cta-section theme-red">
             <div class="container text-center">
@@ -265,7 +442,7 @@
                     <div class="link-column">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>
                         </ul>
                     </div>
@@ -287,8 +464,17 @@
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20las%20licenciaturas%20de%20Meridian" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+    <div id="social-proof-container" class="social-proof-container"></div>
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>

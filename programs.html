@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Oferta Académica Meridian: Ingeniería de Software Full Stack. Programa intensivo de 18 meses con certificaciones globales.">
+        content="Oferta Académica Meridian: Ingeniería de Software Full Stack. Programa intensivo de 24 meses con mínimamente 13 certificaciones globales.">
     <title>Meridian Institute of Technology | Programas</title>
     <!-- Open Graph / Social Media Metatags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meridian.edu.mx/programs.html">
     <meta property="og:title" content="Meridian Institute of Technology | Programas">
     <meta property="og:description"
-        content="Oferta Académica Meridian: Ingeniería de Software Full Stack. Programa intensivo de 18 meses con certificaciones globales.">
+        content="Oferta Académica Meridian: Ingeniería de Software Full Stack. Programa intensivo de 24 meses con mínimamente 13 certificaciones globales.">
     <meta property="og:image" content="https://meridian.edu.mx/assets/social-share.jpg">
 
     <link rel="icon" href="assets/meridian-logo-tab.png" type="image/png">
@@ -32,6 +32,13 @@
 </head>
 
 <body>
+
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
 
     <!-- NAV -->
     <header class="main-header glass-effect">
@@ -66,13 +73,12 @@
     <main>
         <!-- 1. HERO PROGRAMS -->
         <section class="hero-section">
-            <div class="hero-bg-overlay"
-                style="background: linear-gradient(to right, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.8) 100%);"></div>
+            <div class="hero-bg-overlay"></div>
             <!-- Imagen sugerida: coding-environment o lab -->
-            <img src="assets/programs-bg.jpg" alt="Laboratorio de Código" class="hero-bg-img" width="1408" height="736">
+            <img src="assets/programs-bg.jpg" alt="Laboratorio de Código" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
-                <span class="hero-eyebrow">Licenciatura Ejecutiva</span>
+                <span class="hero-eyebrow">Licenciatura Ejecutiva · 24 Meses · 13 Certificaciones Mínimo</span>
                 <h1 class="hero-title">Ingeniería de Software Full Stack.</h1>
                 <p class="hero-subtitle">
                     Un programa de inmersión total diseñado para dominar el stack tecnológico moderno, desde la
@@ -98,7 +104,7 @@
                         <div class="card-icon">
                             <i class="fa-regular fa-calendar-check"></i>
                         </div>
-                        <h3 class="card-title">18 a 24 Meses</h3>
+                        <h3 class="card-title">24 Meses</h3>
                         <p class="card-text">
                             Formato acelerado sin pausas largas. Avanzas por hitos de competencia, no por semestres
                             tradicionales.
@@ -225,7 +231,7 @@
                             <div
                                 style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
                                 <a href="certifications.html" class="link-arrow"
-                                    style="color: var(--primary-color);">Ver detalles de certificaciones <i
+                                    style="color: var(--primary-color);">Ver las 13 certificaciones incluidas <i
                                         class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -373,7 +379,7 @@
                 <h2 class="cta-title">¿Listo para el reto?</h2>
                 <p class="cta-text">Descarga el sílabo completo en PDF o agenda una sesión informativa.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-white"><i class="fa-solid fa-download"></i> Descargar Sílabo</a>
+                    <a href="https://drive.google.com/uc?export=download&id=REEMPLAZAR_CON_ID_REAL" class="btn btn-white" target="_blank" rel="noopener"><i class="fa-solid fa-download"></i> Descargar Sílabo</a>
                     <a href="admissions.html" class="btn btn-outline" style="color: white; border-color: white;">Aplicar
                         Ahora</a>
                 </div>
@@ -411,7 +417,7 @@
                     <div class="link-column">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>
                         </ul>
                     </div>
@@ -433,8 +439,16 @@
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20las%20licenciaturas%20de%20Meridian" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>

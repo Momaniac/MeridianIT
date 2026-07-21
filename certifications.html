@@ -33,6 +33,13 @@
 
 <body>
 
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
+
     <!-- NAV -->
     <header class="main-header glass-effect">
         <div class="container nav-container">
@@ -66,10 +73,8 @@
     <main>
         <!-- 1. HERO CERTIFICACIONES -->
         <section class="hero-section">
-            <div class="hero-bg-overlay"
-                style="background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(138, 21, 56, 0.4) 100%);"></div>
-            <img src="assets/certifications-bg.jpg" alt="Certificados Profesionales" class="hero-bg-img" width="1408"
-                height="736">
+            <div class="hero-bg-overlay"></div>
+            <img src="assets/certifications-bg.jpg" alt="Certificados Profesionales" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Validación Global</span>
@@ -92,62 +97,125 @@
             </div>
         </section>
 
-        <!-- 3. ECOSISTEMA DE CERTIFICACIONES (GRID DE BADGES) -->
+        <!-- 3. CARRUSEL DE BADGES DE CERTIFICACIÓN -->
         <section class="section-padding dark-bg">
             <div class="container">
                 <div class="section-header text-center">
                     <h2 class="section-title" style="color: white;">Certificaciones Incluidas</h2>
                     <p class="section-desc">Preparación y vouchers de examen incluidos en tu colegiatura.</p>
                 </div>
+            </div>
 
-                <div class="grid-3-col">
-                    <!-- Cert 1: AWS -->
-                    <article class="card-feature"
-                        style="background: #1a1a1a; border: 1px solid #333; text-align: center;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <i class="fa-brands fa-aws" style="font-size: 4rem; color: #FF9900;"></i>
-                        </div>
-                        <h3 class="card-title" style="color: white;">AWS Cloud Practitioner</h3>
-                        <p class="card-text" style="color: #9ca3af; font-size: 0.9rem;">
-                            Validación fundamental de la nube. Demuestra comprensión global de la infraestructura de
-                            Amazon Web Services.
-                        </p>
-                        <span class="tag"
-                            style="margin-top: 1rem; display: inline-block; background: rgba(255, 153, 0, 0.1); color: #FF9900;">Cloud
-                            Architecture</span>
-                    </article>
+            <!-- Carousel Container (full-width) -->
+            <div class="badge-carousel-wrapper">
+                <div class="badge-carousel-track">
+                    <!-- First set of badges -->
+                    <div class="badge-slide">
+                        <img src="badges/aws-cloud-practitioner.png" alt="AWS Cloud Practitioner" class="badge-img">
+                        <span class="badge-label">AWS Cloud Practitioner</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/aws-solutions-architect.png" alt="AWS Solutions Architect" class="badge-img">
+                        <span class="badge-label">AWS Solutions Architect</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/google-associate-cloud-engineer.png" alt="Google Associate Cloud Engineer" class="badge-img">
+                        <span class="badge-label">Google Cloud Engineer</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-fundamentals.png" alt="Microsoft Azure Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-ai-fundamentals.png" alt="Azure AI Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure AI Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-data-fundamentals.png" alt="Azure Data Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure Data Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/scrum-psm1.png" alt="Professional Scrum Master I" class="badge-img">
+                        <span class="badge-label">Scrum Master PSM I</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/pcep.png" alt="PCEP Python" class="badge-img">
+                        <span class="badge-label">PCEP Python</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/js-institute.png" alt="JS Institute" class="badge-img">
+                        <span class="badge-label">JS Institute</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/certnexus-caip.png" alt="CertNexus CAIP" class="badge-img">
+                        <span class="badge-label">CertNexus CAIP</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/certnexus-aibiz.png" alt="CertNexus AIBIZ" class="badge-img">
+                        <span class="badge-label">CertNexus AIBIZ</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/comptia-security.png" alt="CompTIA Security+" class="badge-img">
+                        <span class="badge-label">CompTIA Security+</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/github-foundations.png" alt="GitHub Foundations" class="badge-img">
+                        <span class="badge-label">GitHub Foundations</span>
+                    </div>
 
-                    <!-- Cert 2: Google -->
-                    <article class="card-feature"
-                        style="background: #1a1a1a; border: 1px solid #333; text-align: center;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <i class="fa-brands fa-google" style="font-size: 4rem; color: #4285F4;"></i>
-                        </div>
-                        <h3 class="card-title" style="color: white;">Associate Cloud Engineer</h3>
-                        <p class="card-text" style="color: #9ca3af; font-size: 0.9rem;">
-                            Capacidad para desplegar aplicaciones, monitorear operaciones y gestionar soluciones
-                            empresariales en Google Cloud.
-                        </p>
-                        <span class="tag"
-                            style="margin-top: 1rem; display: inline-block; background: rgba(66, 133, 244, 0.1); color: #4285F4;">DevOps
-                            & Deploy</span>
-                    </article>
-
-                    <!-- Cert 3: Microsoft/Scrum -->
-                    <article class="card-feature"
-                        style="background: #1a1a1a; border: 1px solid #333; text-align: center;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <i class="fa-solid fa-users-gear" style="font-size: 4rem; color: #00A4EF;"></i>
-                        </div>
-                        <h3 class="card-title" style="color: white;">Professional Scrum Master I</h3>
-                        <p class="card-text" style="color: #9ca3af; font-size: 0.9rem;">
-                            Certificación de Scrum.org. Valida tu capacidad para gestionar equipos ágiles en entornos de
-                            desarrollo complejos.
-                        </p>
-                        <span class="tag"
-                            style="margin-top: 1rem; display: inline-block; background: rgba(0, 164, 239, 0.1); color: #00A4EF;">Agile
-                            Management</span>
-                    </article>
+                    <!-- Duplicate set for infinite loop -->
+                    <div class="badge-slide">
+                        <img src="badges/aws-cloud-practitioner.png" alt="AWS Cloud Practitioner" class="badge-img">
+                        <span class="badge-label">AWS Cloud Practitioner</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/aws-solutions-architect.png" alt="AWS Solutions Architect" class="badge-img">
+                        <span class="badge-label">AWS Solutions Architect</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/google-associate-cloud-engineer.png" alt="Google Associate Cloud Engineer" class="badge-img">
+                        <span class="badge-label">Google Cloud Engineer</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-fundamentals.png" alt="Microsoft Azure Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-ai-fundamentals.png" alt="Azure AI Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure AI Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/azure-data-fundamentals.png" alt="Azure Data Fundamentals" class="badge-img">
+                        <span class="badge-label">Azure Data Fundamentals</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/scrum-psm1.png" alt="Professional Scrum Master I" class="badge-img">
+                        <span class="badge-label">Scrum Master PSM I</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/pcep.png" alt="PCEP Python" class="badge-img">
+                        <span class="badge-label">PCEP Python</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/js-institute.png" alt="JS Institute" class="badge-img">
+                        <span class="badge-label">JS Institute</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/certnexus-caip.png" alt="CertNexus CAIP" class="badge-img">
+                        <span class="badge-label">CertNexus CAIP</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/certnexus-aibiz.png" alt="CertNexus AIBIZ" class="badge-img">
+                        <span class="badge-label">CertNexus AIBIZ</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/comptia-security.png" alt="CompTIA Security+" class="badge-img">
+                        <span class="badge-label">CompTIA Security+</span>
+                    </div>
+                    <div class="badge-slide">
+                        <img src="badges/github-foundations.png" alt="GitHub Foundations" class="badge-img">
+                        <span class="badge-label">GitHub Foundations</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -327,7 +395,7 @@
                     <div class="link-column">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>
                         </ul>
                     </div>
@@ -349,8 +417,16 @@
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20las%20certificaciones%20de%20Meridian" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>

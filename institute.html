@@ -33,6 +33,13 @@
 
 <body>
 
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
+
     <!-- NAV (Misma estructura, link activo actualizado) -->
     <header class="main-header glass-effect">
         <div class="container nav-container">
@@ -68,10 +75,8 @@
         <!-- 1. HERO INSTITUCIONAL -->
         <!-- Reutilizamos hero-section pero cambiamos la imagen y textos -->
         <section class="hero-section">
-            <div class="hero-bg-overlay"
-                style="background: linear-gradient(to right, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.6) 100%);"></div>
-            <img src="assets/institute-bg.jpg" alt="Arquitectura Meridian" class="hero-bg-img" width="1408"
-                height="736">
+            <div class="hero-bg-overlay"></div>
+            <img src="assets/institute-bg.jpg" alt="Arquitectura Meridian" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Sobre Nosotros</span>
@@ -251,7 +256,7 @@
                     <div class="link-column">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>
                         </ul>
                     </div>
@@ -273,8 +278,16 @@
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20Meridian%20Institute" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>

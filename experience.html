@@ -33,6 +33,13 @@
 
 <body>
 
+    <!-- STICKY PROMO BAR -->
+    <div id="promo-bar" class="sticky-promo-bar">
+        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
+        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
+        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+    </div>
+
     <!-- NAV -->
     <header class="main-header glass-effect">
         <div class="container nav-container">
@@ -66,10 +73,9 @@
     <main>
         <!-- 1. HERO EXPERIENCE -->
         <section class="hero-section">
-            <div class="hero-bg-overlay"
-                style="background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);"></div>
+            <div class="hero-bg-overlay"></div>
             <!-- Imagen sugerida: grupo diverso de estudiantes colaborando o riendo -->
-            <img src="assets/experience-bg.jpg" alt="Comunidad Meridian" class="hero-bg-img" width="1408" height="736">
+            <img src="assets/experience-bg.jpg" alt="Comunidad Meridian" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Student Life</span>
@@ -252,7 +258,7 @@
                     <div class="link-column">
                         <h4>Contacto</h4>
                         <ul>
-                            <li><a href="mailto:admissions@meridian.edu.mx">admissions@meridian.edu.mx</a></li>
+                            <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>
                         </ul>
                     </div>
@@ -274,8 +280,16 @@
         </div>
     </footer>
 
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/5215565029451?text=Hola%2C%20tengo%20dudas%20sobre%20la%20experiencia%20en%20Meridian" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Social Proof Toasts -->
+
     <!-- Script Global -->
     <script src="main.js"></script>
+    <script src="conversion.js"></script>
 </body>
 
 </html>
