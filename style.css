@@ -2811,3 +2811,294 @@ body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .hero-section {
         top: 34px;
     }
 }
+
+/* =========================================
+   12. PORTADA DEL INDEX (HERO COVER)
+   Variante centrada tipo "cover" de presentación comercial:
+   logo grande + mensaje breve. Se usa SOLO en index.html
+   (.hero-section.hero-cover); el resto de páginas conserva
+   el hero alineado a la izquierda.
+   ========================================= */
+.hero-cover {
+    text-align: center;
+    justify-content: center;
+}
+
+/* El overlay por defecto es un degradado izquierda->derecha pensado para
+   texto alineado a la izquierda. En la portada centramos la atención. */
+.hero-cover .hero-bg-overlay {
+    background: radial-gradient(ellipse at 50% 45%,
+            rgba(8, 17, 39, 0.62) 0%,
+            rgba(8, 17, 39, 0.88) 55%,
+            rgba(8, 17, 39, 0.97) 100%);
+}
+
+.hero-cover-content {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-cover-logo {
+    width: min(500px, 74vw);
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.hero-cover-tagline {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.hero-cover-tagline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.hero-cover-title {
+    font-family: var(--font-display);
+    font-size: 2.9rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+}
+
+.hero-cover-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+}
+
+.hero-cover-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   13. SECCIONES RESUMEN DEL INDEX (HUB)
+   El inicio funciona como índice comercial: cada bloque adelanta
+   el contenido de otra página y enlaza a ella, para no duplicar
+   información ni dejarla escondida.
+   ========================================= */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Tarjeta de programa (adelanto de programs.html / maestria-ejecutiva.html) */
+.program-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-top: 3px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    transition: var(--transition);
+}
+
+.program-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.program-card-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.85rem;
+}
+
+.program-card-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--text-strong);
+    margin-bottom: 0.85rem;
+}
+
+.program-card-text {
+    color: var(--text-main);
+    margin-bottom: 1.75rem;
+}
+
+.program-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1.75rem;
+}
+
+.program-stat-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.program-stat-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Empuja el enlace al pie de la tarjeta para alinear ambas columnas */
+.program-card .link-arrow {
+    margin-top: auto;
+}
+
+/* Chips de certificaciones (adelanto de certifications.html) */
+.cert-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 2.5rem;
+}
+
+.cert-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-strong);
+}
+
+.cert-chip i {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+/* Enlace de sección centrado, para cerrar cada bloque resumen del index */
+.link-arrow-center {
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+/* Sobre fondo oscuro el rojo institucional no contrasta: usamos blanco */
+.dark-bg .link-arrow {
+    color: #ffffff;
+}
+
+.dark-bg .link-arrow:hover {
+    color: #cbd5e1;
+}
+
+/* Pasos del proceso de admisión (adelanto de admissions.html) */
+.steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.step-mini-num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.step-mini-title {
+    font-weight: 600;
+    color: var(--text-strong);
+    margin-bottom: 0.35rem;
+}
+
+.step-mini-text {
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+/* Variantes sobre fondo oscuro */
+.dark-bg .step-mini-title {
+    color: white;
+}
+
+.dark-bg .step-mini-text {
+    color: #cbd5e1;
+}
+
+.dark-bg .cert-chip {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cover-title {
+        font-size: 2rem;
+    }
+
+    .hero-cover-text {
+        font-size: 1rem;
+    }
+
+    .hero-cover-logo {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-cover-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cover-buttons .btn {
+        width: 100%;
+    }
+
+    .program-card {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps-row {
+        grid-template-columns: 1fr;
+    }
+}

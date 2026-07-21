@@ -51,6 +51,7 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="institute.html" class="nav-link">El Instituto</a></li>
                     <li><a href="programs.html" class="nav-link">Oferta Académica</a></li>
                     <li><a href="maestria-ejecutiva.html" class="nav-link">Maestría Ejecutiva</a></li>
@@ -70,28 +71,34 @@
     </header>
 
     <main>
-        <!-- 1. HERO SECTION -->
-        <section class="hero-section">
+        <!-- 1. PORTADA (COVER)
+             Presentación de marca: logo grande + mensaje breve, estilo portada
+             comercial. Usa la variante centrada .hero-cover de style.css; el
+             resto de páginas conserva el hero alineado a la izquierda. -->
+        <section class="hero-section hero-cover">
             <div class="hero-bg-overlay"></div>
-            <!-- Imagen de fondo sugerida: assets/hero-bg.jpg -->
-            <img fetchpriority="high" decoding="async" src="assets/hero-bg.jpg" alt="Campus Tecnológico Meridian" class="hero-bg-img" width="1920" height="1080">
+            <img fetchpriority="high" decoding="async" src="assets/hero-bg.jpg" alt="Campus Tecnológico Meridian"
+                class="hero-bg-img" width="1920" height="1080">
 
-            <div class="container hero-content">
-                <span class="hero-eyebrow">The New Standard</span>
-                <h1 class="hero-title">Ingeniería para la próxima generación de talento global.</h1>
-                <p class="hero-subtitle">
-                    Una institución construida para quienes eligen liderar. En Meridian, la educación es rigurosa,
-                    aplicada y conectada con la industria moderna.
+            <div class="container hero-cover-content">
+                <img src="assets/logo-meridian-bco.png" alt="Meridian Institute of Technology"
+                    class="hero-cover-logo" width="2041" height="711" fetchpriority="high" decoding="async">
+                <p class="hero-cover-tagline">Engineering the next generation</p>
+                <h1 class="hero-cover-title">Ingeniería para la próxima generación de talento global.</h1>
+                <p class="hero-cover-text">
+                    Educación rigurosa, aplicada y conectada con la industria moderna.
                 </p>
-                <div class="hero-buttons">
+                <div class="hero-cover-buttons">
                     <a href="admissions.html" class="btn btn-primary">Iniciar Proceso de Admisión</a>
                     <a href="programs.html" class="btn btn-outline">Explorar Programas</a>
                 </div>
             </div>
         </section>
 
-        <!-- 2. EL DIFERENCIAL (VALUE PROP) -->
-        <section class="section-padding differential-section">
+        <!-- 2. ¿POR QUÉ MERIDIAN? — adelanto de institute.html
+             Resume la filosofía; el detalle (Visión 2030, liderazgo académico)
+             vive en El Instituto. -->
+        <section id="por-que-meridian" class="section-padding differential-section">
             <div class="container">
                 <div class="section-header text-center">
                     <span class="section-eyebrow">Nuestra Filosofía</span>
@@ -136,10 +143,85 @@
                         </p>
                     </article>
                 </div>
+
+                <a href="institute.html" class="link-arrow link-arrow-center">
+                    Conoce el Instituto y su Visión 2030 <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
-        <!-- 3. MODELO EDUCATIVO (PREVIEW) -->
+        <!-- 3. OFERTA ACADÉMICA — adelanto de programs.html y maestria-ejecutiva.html
+             Antes el inicio no mencionaba los programas, que son el producto
+             principal. Aquí se resumen; el plan de estudios completo vive en
+             cada página. -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Oferta Académica</span>
+                    <h2 class="section-title">Dos rutas, un mismo estándar</h2>
+                    <p class="section-desc">Elige según tu momento profesional. El plan de estudios completo está en la
+                        página de cada programa.</p>
+                </div>
+
+                <div class="grid-2-col">
+                    <article class="program-card">
+                        <p class="program-card-eyebrow">Licenciatura Ejecutiva</p>
+                        <h3 class="program-card-title">Ingeniería de Software Full Stack</h3>
+                        <p class="program-card-text">
+                            Inmersión total de 7 horas diarias. Avanzas por hitos de competencia, no por semestres
+                            tradicionales, y te gradúas con proyectos desplegados en producción.
+                        </p>
+                        <div class="program-card-stats">
+                            <div>
+                                <div class="program-stat-num">24</div>
+                                <div class="program-stat-label">Meses</div>
+                            </div>
+                            <div>
+                                <div class="program-stat-num">13+</div>
+                                <div class="program-stat-label">Certificaciones</div>
+                            </div>
+                            <div>
+                                <div class="program-stat-num">80%</div>
+                                <div class="program-stat-label">Código</div>
+                            </div>
+                        </div>
+                        <a href="programs.html" class="link-arrow">Ver plan de estudios <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="program-card">
+                        <p class="program-card-eyebrow">Maestría Ejecutiva</p>
+                        <h3 class="program-card-title">Tecnología e Inteligencia Artificial para Líderes</h3>
+                        <p class="program-card-text">
+                            Para profesionales en activo que necesitan dirigir la adopción de tecnología e IA en su
+                            organización, sin pausar su carrera.
+                        </p>
+                        <div class="program-card-stats">
+                            <div>
+                                <div class="program-stat-num">12</div>
+                                <div class="program-stat-label">Meses</div>
+                            </div>
+                            <div>
+                                <div class="program-stat-num">5</div>
+                                <div class="program-stat-label">Certificaciones</div>
+                            </div>
+                            <div>
+                                <div class="program-stat-num">80%</div>
+                                <div class="program-stat-label">Práctica</div>
+                            </div>
+                        </div>
+                        <a href="maestria-ejecutiva.html" class="link-arrow">Ver la Maestría <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+
+                <a href="gantt-programa.html" class="link-arrow link-arrow-center">
+                    Consulta el calendario semana a semana <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 4. MODELO EDUCATIVO — adelanto del método (detalle en institute.html) -->
         <section class="section-padding educational-model-section dark-bg">
             <div class="container">
                 <div class="split-layout">
@@ -175,32 +257,53 @@
                         </ul>
                     </div>
                     <div class="visual-content">
-                        <!-- Espacio para gráfico interactivo o imagen ilustrativa -->
                         <div class="model-graphic-container glass-panel">
                             <img src="assets/model-diagram.jpg" alt="Estudiante Meridian aprendiendo con laptop y móvil"
                                 class="graphic-img" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
+
+                <a href="institute.html" class="link-arrow link-arrow-center">
+                    Conoce el modelo educativo completo <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
-        <!-- 4. SOCIAL PROOF & PARTNERS -->
+        <!-- 5. CERTIFICACIONES — adelanto de certifications.html
+             Antes era solo una tira de logos sin contexto ni enlace: el visitante
+             no sabía que las certificaciones vienen incluidas ni dónde ampliar. -->
         <section class="section-padding partners-section">
             <div class="container text-center">
-                <p class="partners-label">Estándares y Tecnologías que dominamos</p>
-                <div class="logo-grid">
-                    <!-- Logos deben estar en blanco/gris para armonía visual -->
-                    <img loading="lazy" decoding="async" src="assets/logo-aws.png" alt="AWS" class="partner-logo">
-                    <img loading="lazy" decoding="async" src="assets/logo-google.png" alt="Google Cloud" class="partner-logo">
-                    <img loading="lazy" decoding="async" src="assets/logo-microsoft.png" alt="Microsoft" class="partner-logo">
-                    <img loading="lazy" decoding="async" src="assets/logo-oracle.png" alt="Oracle" class="partner-logo">
-                    <img loading="lazy" decoding="async" src="assets/logo-cisco.png" alt="Cisco" class="partner-logo">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Certificaciones</span>
+                    <h2 class="section-title">Tu talento, verificado por la industria</h2>
+                    <p class="section-desc">Preparación y vouchers de examen incluidos en tu colegiatura.</p>
                 </div>
+
+                <div class="cert-chip-grid">
+                    <span class="cert-chip"><i class="fa-brands fa-aws"></i> AWS Cloud Practitioner</span>
+                    <span class="cert-chip"><i class="fa-brands fa-aws"></i> AWS Solutions Architect</span>
+                    <span class="cert-chip"><i class="fa-brands fa-google"></i> Google Cloud Engineer</span>
+                    <span class="cert-chip"><i class="fa-brands fa-microsoft"></i> Azure Fundamentals</span>
+                    <span class="cert-chip"><i class="fa-brands fa-microsoft"></i> Azure AI Fundamentals</span>
+                    <span class="cert-chip"><i class="fa-brands fa-microsoft"></i> Azure Data Fundamentals</span>
+                </div>
+
+                <!-- Se retiró aquí la tira de "logos de socios": los archivos
+                     assets/logo-*.png no son logotipos de marca reales sino
+                     íconos genéricos blancos (oracle y cisco son el mismo
+                     archivo) y resultaban invisibles sobre fondo blanco. Los
+                     chips de arriba comunican lo mismo de forma verificable.
+                     Pendiente: sustituirlos por logotipos oficiales. -->
+
+                <a href="certifications.html" class="link-arrow link-arrow-center">
+                    Ver todas las certificaciones incluidas <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
-        <!-- 5. EXPERIENCIA DIGITAL -->
+        <!-- 6. LA EXPERIENCIA — adelanto de experience.html (clubes, Semana Cero, mentoring) -->
         <section class="section-padding experience-section">
             <div class="container">
                 <div class="section-header-row">
@@ -212,7 +315,7 @@
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Estructura básica de Slider/Carrusel -->
+                <!-- Rejilla de 3 tarjetas (no es carrusel: no hay JS de slider) -->
                 <div class="experience-slider-wrapper">
                     <div class="experience-grid">
                         <!-- Card 1 -->
@@ -249,7 +352,99 @@
             </div>
         </section>
 
-        <!-- CALCULADORA DE BECAS -->
+        <!-- 7. CARRERAS — adelanto de careers.html
+             Cierra la pregunta "¿y después qué?": con qué sale el egresado. -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Empleabilidad</span>
+                    <h2 class="section-title">El Egresado Meridian</h2>
+                    <p class="section-desc">Las empresas no contratan solo por lo que sabes, sino por lo que puedes
+                        demostrar. Te gradúas con tres activos.</p>
+                </div>
+
+                <div class="grid-3-col">
+                    <article class="card-feature">
+                        <div class="card-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <h3 class="card-title">Portafolio de Producción</h3>
+                        <p class="card-text">
+                            Un repositorio con proyectos complejos, documentados y desplegados. No ejercicios de
+                            juguete.
+                        </p>
+                    </article>
+
+                    <article class="card-feature">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="card-title">Credenciales Verificadas</h3>
+                        <p class="card-text">
+                            Certificaciones de AWS, Google y Scrum.org como prueba externa de tu competencia técnica.
+                        </p>
+                    </article>
+
+                    <article class="card-feature">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h3 class="card-title">Disciplina Profesional</h3>
+                        <p class="card-text">
+                            Experiencia con tickets de Jira, metodologías Agile y plazos ajustados. Llegas listo para
+                            aportar.
+                        </p>
+                    </article>
+                </div>
+
+                <a href="careers.html" class="link-arrow link-arrow-center">
+                    Explora salidas profesionales y el test vocacional <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. ADMISIONES — adelanto de admissions.html
+             El proceso estaba solo en su página; aquí se resume para que nadie
+             abandone el inicio sin saber cómo se entra. -->
+        <section class="section-padding dark-bg">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Admisiones</span>
+                    <h2 class="section-title">El Camino a Meridian</h2>
+                    <p class="section-desc">Un proceso selectivo de cuatro pasos. No necesitas saber programar para
+                        empezar.</p>
+                </div>
+
+                <div class="steps-row">
+                    <div>
+                        <div class="step-mini-num">01</div>
+                        <p class="step-mini-title">Aplicación Online</p>
+                        <p class="step-mini-text">Formulario con tus datos y motivos. Toma 5 minutos.</p>
+                    </div>
+                    <div>
+                        <div class="step-mini-num">02</div>
+                        <p class="step-mini-title">Prueba Lógica</p>
+                        <p class="step-mini-text">Aptitud cognitiva y razonamiento. No requiere programar.</p>
+                    </div>
+                    <div>
+                        <div class="step-mini-num">03</div>
+                        <p class="step-mini-title">Entrevista de Perfil</p>
+                        <p class="step-mini-text">Videollamada con el comité de admisiones.</p>
+                    </div>
+                    <div>
+                        <div class="step-mini-num">04</div>
+                        <p class="step-mini-title">Dictamen y Onboarding</p>
+                        <p class="step-mini-text">Carta de aceptación y acceso a la Semana Cero.</p>
+                    </div>
+                </div>
+
+                <a href="admissions.html" class="link-arrow link-arrow-center">
+                    Ver requisitos, inversión y becas <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 9. CALCULADORA DE BECAS — herramienta de conversión propia del inicio -->
         <section id="calculadora-becas" class="section-padding scholarship-section">
             <div class="container">
                 <div class="section-header text-center">
@@ -376,7 +571,7 @@
             </div>
         </section>
 
-        <!-- CALL TO ACTION FINAL -->
+        <!-- 10. CIERRE — llamado final a admisiones -->
         <section class="cta-section theme-red">
             <div class="container text-center">
                 <h2 class="cta-title">¿Listo para definir tu futuro?</h2>
@@ -453,7 +648,7 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Social Proof Toasts -->
+    <!-- Contenedor de toasts de confirmación (solo acciones reales del usuario) -->
     <div id="social-proof-container" class="social-proof-container"></div>
 
     <!-- Script Global -->
