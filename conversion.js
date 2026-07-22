@@ -1,38 +1,17 @@
 /**
  * conversion.js — Meridian Institute of Technology
  * Herramientas de conversión: Calculadora de Becas, Test Vocacional,
- * Social Proof Toasts, Sticky Bar, WhatsApp FAB.
+ * Toasts de confirmación, WhatsApp FAB.
  * 100% Vanilla JS — Sin dependencias.
+ *
+ * La marquesina promocional es puramente CSS (ver .promo-marquee en
+ * style.css): no lleva lógica de cierre ni estado en sessionStorage.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
-    // 1. STICKY PROMO BAR — Dismiss logic
-    // =========================================
-    const promoBar = document.getElementById('promo-bar');
-    const promoClose = document.getElementById('promo-bar-close');
-    if (promoBar && promoClose) {
-        // Check sessionStorage to keep it dismissed during session
-        if (sessionStorage.getItem('promo-bar-dismissed')) {
-            promoBar.style.display = 'none';
-            // Recalcula el alto del chrome fijo: sin la barra, el header sube.
-            if (window.syncChromeHeight) window.syncChromeHeight();
-        }
-        promoClose.addEventListener('click', () => {
-            promoBar.classList.add('promo-bar-hidden');
-            // Se avisa de inmediato para que el header suba a la vez que la
-            // barra se desliza, en lugar de dar un salto al terminar.
-            if (window.syncChromeHeight) window.syncChromeHeight();
-            setTimeout(() => {
-                promoBar.style.display = 'none';
-            }, 400);
-            sessionStorage.setItem('promo-bar-dismissed', 'true');
-        });
-    }
-
-    // =========================================
-    // 2. TOAST DE CONFIRMACIÓN — Solo acciones reales
+    // 1. TOAST DE CONFIRMACIÓN — Solo acciones reales
     // =========================================
     // Muestra una tarjeta de confirmación cuando el usuario completa una
     // acción real y verificable (ej. envío de un formulario). Sin datos
@@ -67,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // 3. SCHOLARSHIP CALCULATOR WIZARD
+    // 2. SCHOLARSHIP CALCULATOR WIZARD
     // =========================================
     const wizard = document.getElementById('scholarship-wizard');
     if (wizard) {
@@ -293,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // 4. VOCATIONAL TEST
+    // 3. VOCATIONAL TEST
     // =========================================
     const vocTest = document.getElementById('vocational-test');
     if (vocTest) {

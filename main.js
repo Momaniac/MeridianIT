@@ -14,18 +14,15 @@ function syncChromeHeight() {
     const promo = document.getElementById('promo-bar');
     const header = document.querySelector('.main-header');
 
-    const promoVisible = promo
-        && getComputedStyle(promo).display !== 'none'
-        && !promo.classList.contains('promo-bar-hidden');
+    // La marquesina es permanente, pero no todas las páginas la llevan
+    // (gantt, privacy y sitemap no), así que se comprueba si existe.
+    const promoVisible = promo && getComputedStyle(promo).display !== 'none';
 
     root.style.setProperty('--promo-h', (promoVisible ? promo.offsetHeight : 0) + 'px');
     if (header) {
         root.style.setProperty('--header-h', header.offsetHeight + 'px');
     }
 }
-
-// Se expone para que conversion.js recalcule al cerrar la barra promo.
-window.syncChromeHeight = syncChromeHeight;
 
 document.addEventListener('DOMContentLoaded', () => {
     syncChromeHeight();

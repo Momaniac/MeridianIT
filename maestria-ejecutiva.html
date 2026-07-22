@@ -33,11 +33,21 @@
 
 <body>
 
-    <!-- STICKY PROMO BAR -->
+    <!-- MARQUESINA PROMOCIONAL
+         Dos sets idénticos: la animación desplaza -50% para el bucle continuo.
+         Si se edita un mensaje hay que tocarlo en AMBOS sets o el bucle salta.
+         El segundo set va aria-hidden para no leerlo dos veces. -->
     <div id="promo-bar" class="sticky-promo-bar">
-        <span>🎓 Cierre de inscripciones <strong>31 de Agosto</strong> —</span>
-        <a href="index.html#calculadora-becas">Calcula tu beca aquí →</a>
-        <button id="promo-bar-close" class="promo-bar-close" aria-label="Cerrar">×</button>
+        <a class="promo-marquee" href="index.html#calculadora-becas">
+            <div class="promo-marquee-track">
+                <span class="promo-item">🎓 Cierre de inscripciones: <strong>31 de Agosto</strong></span>
+                <span class="promo-item">🎯 Calcula tu beca en 30 segundos</span>
+                <span class="promo-item">📅 Próximo ciclo inicia: <strong>Agosto 2026</strong></span>
+                <span class="promo-item" aria-hidden="true">🎓 Cierre de inscripciones: <strong>31 de Agosto</strong></span>
+                <span class="promo-item" aria-hidden="true">🎯 Calcula tu beca en 30 segundos</span>
+                <span class="promo-item" aria-hidden="true">📅 Próximo ciclo inicia: <strong>Agosto 2026</strong></span>
+            </div>
+        </a>
     </div>
 
     <!-- NAV -->
