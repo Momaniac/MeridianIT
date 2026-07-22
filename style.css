@@ -28,6 +28,22 @@
     --transition: all 0.3s ease;
     --shadow-sm: 0 4px 6px -1px rgba(8, 17, 39, 0.08);
     --shadow-lg: 0 10px 15px -3px rgba(8, 17, 39, 0.12);
+
+    /* Alto del "chrome" fijo (barra promo + header).
+       Ambos son position:fixed, así que no ocupan lugar en el flujo y el
+       contenido pasa por debajo si nadie reserva su espacio.
+       main.js mide los valores reales y sobrescribe estas variables en cada
+       resize, así que sirven para cualquier breakpoint sin tocar el CSS.
+       Los valores de aquí son solo el respaldo antes de que corra el script. */
+    --promo-h: 40px;
+    --header-h: 84px;
+    --chrome-h: calc(var(--promo-h) + var(--header-h));
+}
+
+/* Las anclas internas (#calculadora-becas, #propuesta, ...) aterrizarían
+   debajo del header fijo sin este margen de scroll. */
+[id] {
+    scroll-margin-top: calc(var(--chrome-h) + 1rem);
 }
 
 * {
@@ -159,11 +175,14 @@ img {
    ========================================= */
 .main-header {
     position: fixed;
-    top: 0;
+    /* Se apoya justo debajo de la barra promo. Cuando el usuario la cierra,
+       main.js pone --promo-h en 0 y el header sube solo. */
+    top: var(--promo-h);
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
+    transition: top 0.4s ease;
 }
 
 .nav-container {
@@ -246,15 +265,20 @@ img {
    ========================================= */
 .hero-section {
     position: relative;
-    height: 90vh;
-    /* Casi pantalla completa */
-    min-height: 600px;
     display: flex;
     align-items: center;
     color: white;
-    margin-top: -80px;
-    /* Compensa el header fixed */
-    padding-top: 80px;
+    /* Reserva el alto real del chrome fijo para que el contenido quede
+       centrado en el espacio VISIBLE y nunca por debajo del header.
+       Antes esto se hacía con margin-top negativo y padding-top fijos que
+       se redefinían en cada breakpoint con valores distintos: por eso el
+       logo de la portada quedaba tapado. */
+    padding-top: calc(var(--chrome-h) + 2rem);
+    padding-bottom: 3rem;
+    /* height:auto + min-height deja crecer el hero si el contenido no cabe
+       (p. ej. móvil en horizontal) en vez de recortarlo. */
+    height: auto;
+    min-height: 90vh;
 }
 
 .hero-bg-img {
@@ -703,6 +727,39 @@ img {
    8. RESPONSIVE MEDIA QUERIES
    ========================================= */
 
+/* --- LAPTOP INTERMEDIO (1101px–1400px) ---
+   El menú tiene 7 enlaces más el botón de Admisiones. Como .nav-list usa
+   flex-wrap:nowrap y los enlaces white-space:nowrap, la barra no se encoge:
+   desborda, y el botón quedaba fuera de pantalla en anchos de laptop muy
+   comunes (1280, 1152...). Aquí se compacta el espaciado para que quepa.
+   Se compacta en vez de adelantar el menú hamburguesa, que en una laptop
+   sería peor experiencia. Si algún día se añade otro enlace, hay que volver
+   a medir este rango. */
+@media (min-width: 1101px) and (max-width: 1400px) {
+    .nav-container {
+        gap: 1rem;
+    }
+
+    .nav-list {
+        gap: 0.85rem;
+    }
+
+    .nav-link {
+        font-size: 0.66rem;
+        letter-spacing: 0.4px;
+    }
+
+    .nav-actions {
+        gap: 0.6rem;
+    }
+
+    .nav-actions .btn {
+        padding: 0.75rem 1.1rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
+    }
+}
+
 /* --- TABLET / SMALL DESKTOP (≤1100px) --- */
 @media (max-width: 1100px) {
     .hero-title {
@@ -798,11 +855,8 @@ img {
 /* --- MOBILE (≤768px) --- */
 @media (max-width: 768px) {
     .hero-section {
-        height: auto;
         min-height: 70vh;
-        padding-top: 160px;
         padding-bottom: 3rem;
-        margin-top: 0;
     }
 
     .hero-title {
@@ -936,7 +990,6 @@ img {
 @media (max-width: 480px) {
     .hero-section {
         min-height: 60vh;
-        padding-top: 150px;
         padding-bottom: 2rem;
     }
 
@@ -1109,10 +1162,6 @@ img {
 
 /* --- ULTRA SMALL MOBILE (≤360px) --- */
 @media (max-width: 360px) {
-    .hero-section {
-        padding-top: 165px;
-    }
-
     .hero-title {
         font-size: 1.4rem;
     }
@@ -1162,9 +1211,7 @@ img {
 /* --- LANDSCAPE PHONES --- */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section {
-        height: auto;
         min-height: auto;
-        padding-top: 100px;
         padding-bottom: 2rem;
     }
 
@@ -1853,14 +1900,9 @@ textarea:focus {
     opacity: 0;
 }
 
-/* Offset header when promo bar is visible */
-body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .main-header {
-    top: 38px;
-}
-
-body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .hero-section {
-    margin-top: -42px;
-}
+/* El desplazamiento del header y del hero ya no se hace aquí con valores
+   fijos: sale de --promo-h / --chrome-h, que main.js mantiene al día con el
+   alto real de la barra. */
 
 /* =========================================
    13. WHATSAPP FLOATING BUTTON
@@ -2811,10 +2853,6 @@ body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .hero-section {
 
     .avg-display .avg-number {
         font-size: 2.5rem;
-    }
-
-    body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .main-header {
-        top: 34px;
     }
 }
 

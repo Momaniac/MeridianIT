@@ -16,9 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check sessionStorage to keep it dismissed during session
         if (sessionStorage.getItem('promo-bar-dismissed')) {
             promoBar.style.display = 'none';
+            // Recalcula el alto del chrome fijo: sin la barra, el header sube.
+            if (window.syncChromeHeight) window.syncChromeHeight();
         }
         promoClose.addEventListener('click', () => {
             promoBar.classList.add('promo-bar-hidden');
+            // Se avisa de inmediato para que el header suba a la vez que la
+            // barra se desliza, en lugar de dar un salto al terminar.
+            if (window.syncChromeHeight) window.syncChromeHeight();
             setTimeout(() => {
                 promoBar.style.display = 'none';
             }, 400);
