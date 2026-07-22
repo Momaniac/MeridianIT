@@ -7,6 +7,7 @@
     <meta name="description"
         content="Certificaciones Internacionales Meridian: AWS, Google Cloud, Microsoft Azure. Valida tus conocimientos con estándares globales.">
     <title>Meridian Institute of Technology | Certificaciones</title>
+    <link rel="canonical" href="https://meridianitec.com/certifications.html">
     <!-- Open Graph / Social Media Metatags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meridianitec.com/certifications.html">
@@ -20,12 +21,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"></noscript>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome — carga NO bloqueante. Son 100 KB de iconos decorativos que
+         estaban en la ruta crítica: el render-delay era el 84 % del LCP.
+         integrity+crossorigin verifican el archivo servido por el CDN (SRI).
+         El <noscript> mantiene los iconos si el JS está desactivado. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <!-- Hoja de Estilos Maestra -->
     <link rel="stylesheet" href="style.css">
@@ -85,7 +93,7 @@
         <!-- 1. HERO CERTIFICACIONES -->
         <section class="hero-section">
             <div class="hero-bg-overlay"></div>
-            <img fetchpriority="high" decoding="async" src="assets/certifications-bg.jpg" alt="Certificados Profesionales" class="hero-bg-img" width="1920" height="1080">
+            <img fetchpriority="high" decoding="async" src="assets/certifications-bg.jpg" srcset="assets/certifications-bg-960.jpg 960w, assets/certifications-bg.jpg 1920w" sizes="100vw" alt="Certificados Profesionales" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Validación Global</span>
@@ -286,7 +294,7 @@
 
                                     <!-- 2. Metrics Chart -->
                                     <div class="app-card">
-                                        <h5 class="app-card-title" style="margin-bottom: 0.5rem;">Domain Mastery</h5>
+                                        <h3 class="app-card-title" style="margin-bottom: 0.5rem;">Domain Mastery</h3>
                                         <div class="metric-row">
                                             <div class="metric-info">
                                                 <div class="metric-label">
@@ -316,7 +324,7 @@
                                         <div class="cert-border">
                                             <i class="fa-solid fa-award"
                                                 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                            <h6 class="cert-title">Certificate of Excellence</h6>
+                                            <h4 class="cert-title">Certificate of Excellence</h4>
                                             <div class="cert-recipient">Ana G.</div>
                                             <p class="cert-body">Has successfully completed the Cloud Architecture
                                                 module.
@@ -345,7 +353,7 @@
                                 <i class="fa-solid fa-check-circle"
                                     style="color: var(--primary-color); font-size: 1.2rem; margin-top: 3px;"></i>
                                 <div>
-                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Labs Oficiales</h4>
+                                    <h3 style="font-size: 1.1rem; font-weight: 600;">Labs Oficiales</h3>
                                     <p style="color: #64748b;">Acceso a entornos de práctica sandbox de AWS y Azure.</p>
                                 </div>
                             </li>
@@ -394,7 +402,7 @@
 
                 <div class="footer-links">
                     <div class="link-column">
-                        <h4>Instituto</h4>
+                        <h2>Instituto</h2>
                         <ul>
                             <li><a href="institute.html">Filosofía</a></li>
                             <li><a href="experience.html">Experiencia</a></li>
@@ -402,7 +410,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Academia</h4>
+                        <h2>Academia</h2>
                         <ul>
                             <li><a href="programs.html">Programas</a></li>
                             <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
@@ -411,7 +419,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Contacto</h4>
+                        <h2>Contacto</h2>
                         <ul>
                             <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>

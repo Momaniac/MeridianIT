@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
+    <link rel="canonical" href="https://meridianitec.com/gantt-programa.html">
     <!-- Open Graph -->
     <meta property="og:title" content="Calendario Gantt · Maestría Ejecutiva METIA">
     <meta property="og:description"
@@ -23,10 +24,18 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <!-- FontAwesome — carga NO bloqueante. Son 100 KB de iconos decorativos que
+         estaban en la ruta crítica: el render-delay era el 84 % del LCP.
+         integrity+crossorigin verifican el archivo servido por el CDN (SRI).
+         El <noscript> mantiene los iconos si el JS está desactivado. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="style.css">
@@ -366,7 +375,7 @@
         <!-- HERO -->
         <section class="hero-section" style="min-height: 40vh;">
             <div class="hero-bg-overlay"></div>
-            <img fetchpriority="high" decoding="async" src="assets/maestria-bg.jpg" alt="Calendario Gantt METIA" class="hero-bg-img" width="1920" height="1080">
+            <img fetchpriority="high" decoding="async" src="assets/maestria-bg.jpg" srcset="assets/maestria-bg-960.jpg 960w, assets/maestria-bg.jpg 1920w" sizes="100vw" alt="Calendario Gantt METIA" class="hero-bg-img" width="1920" height="1080">
             <div class="container hero-content">
                 <span class="hero-eyebrow">Maestría Ejecutiva Online · Calendario Académico</span>
                 <h1 class="hero-title" style="font-size: 2.5rem;">Calendario Gantt del Programa</h1>
@@ -2014,7 +2023,7 @@
 
                 <div class="footer-links">
                     <div class="link-column">
-                        <h4>Instituto</h4>
+                        <h2>Instituto</h2>
                         <ul>
                             <li><a href="institute.html">Filosofía</a></li>
                             <li><a href="experience.html">Experiencia</a></li>
@@ -2022,7 +2031,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Academia</h4>
+                        <h2>Academia</h2>
                         <ul>
                             <li><a href="programs.html">Programas</a></li>
                             <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
@@ -2031,7 +2040,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Contacto</h4>
+                        <h2>Contacto</h2>
                         <ul>
                             <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>

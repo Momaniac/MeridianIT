@@ -17,7 +17,14 @@
     --text-main: #575A65;
     --text-strong: #081127;
     --text-light: #ffffff;
+    /* Texto atenuado. Cada token declara sobre qué fondo es válido, porque el
+       mismo gris que se lee bien sobre el navy falla el contraste sobre blanco.
+       Medido con WCAG 2.2 (AA exige 4.5:1 en texto normal):
+         --text-muted        #94a3b8 sobre #081127 → 7.05:1  ✓   sobre blanco → 2.56:1 ✗
+         --text-muted-light  #64748b sobre #ffffff → 4.76:1  ✓
+       Usar --text-muted SOLO sobre fondo oscuro. */
     --text-muted: #94a3b8;
+    --text-muted-light: #64748b;
 
     /* Tipografía */
     --font-display: 'Baskervville', serif;
@@ -464,7 +471,7 @@ img {
     opacity: 0.8;
 }
 
-.process-info h4 {
+.process-info h3 {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
 }
@@ -483,15 +490,6 @@ img {
     justify-content: center;
 }
 
-/* Partners (Logos) */
-.partners-label {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
 
 .logo-grid {
     display: flex;
@@ -676,7 +674,7 @@ img {
     display: contents;
 }
 
-.link-column h4 {
+.link-column h2 {
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 1.25rem;
     font-family: var(--font-body);
@@ -1265,7 +1263,7 @@ textarea:focus {
     outline: none;
     border-color: var(--primary-color);
     background-color: white;
-    box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.1);
+    box-shadow: 0 0 0 3px rgba(121, 29, 26, 0.1);
 }
 
 /* Ajuste móvil para formularios */
@@ -1393,7 +1391,7 @@ textarea:focus {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.6rem;
-    color: #94a3b8;
+    color: var(--text-muted-light);
 }
 
 .app-stat-row {
@@ -1580,11 +1578,6 @@ textarea:focus {
     text-align: center;
 }
 
-.cert-logo-small {
-    width: 30px;
-    margin: 0 auto 0.5rem;
-    opacity: 0.8;
-}
 
 .cert-title {
     font-family: var(--font-display);
@@ -2040,7 +2033,7 @@ textarea:focus {
 .proof-close {
     background: none;
     border: none;
-    color: #94a3b8;
+    color: var(--text-muted-light);
     font-size: 1.1rem;
     cursor: pointer;
     padding: 0;
@@ -2572,7 +2565,7 @@ textarea:focus {
 
 .badge-slide:hover .badge-img {
     border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(138, 21, 56, 0.3);
+    box-shadow: 0 0 20px rgba(121, 29, 26, 0.3);
 }
 
 .badge-label {
@@ -3059,7 +3052,7 @@ textarea:focus {
     letter-spacing: 1px;
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-muted-light);
 }
 
 /* Empuja el enlace al pie de la tarjeta para alinear ambas columnas */
@@ -3213,4 +3206,31 @@ textarea:focus {
     .steps-row {
         grid-template-columns: 1fr;
     }
+}
+
+/* Nota de privacidad bajo el botón de cada formulario.
+   Los tres formularios entregan datos personales a un procesador externo
+   (FormSubmit), así que el aviso tiene que estar a un clic desde el punto
+   de envío, no solo en el pie. */
+.form-privacy-note {
+    margin-top: 0.9rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted-light);
+}
+
+.form-privacy-note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.form-privacy-note a:hover {
+    color: var(--primary-color);
+}
+
+/* Sobre fondo oscuro (calculadora de becas y test vocacional) */
+.gated-form .form-privacy-note,
+.voc-gated-form .form-privacy-note {
+    color: rgba(255, 255, 255, 0.75);
 }

@@ -7,6 +7,7 @@
     <meta name="description"
         content="Empleabilidad en Meridian: Career Services, preparación para entrevistas técnicas y conexión con empresas líderes.">
     <title>Meridian Institute of Technology | Carreras</title>
+    <link rel="canonical" href="https://meridianitec.com/careers.html">
     <!-- Open Graph / Social Media Metatags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meridianitec.com/careers.html">
@@ -20,12 +21,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"></noscript>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome — carga NO bloqueante. Son 100 KB de iconos decorativos que
+         estaban en la ruta crítica: el render-delay era el 84 % del LCP.
+         integrity+crossorigin verifican el archivo servido por el CDN (SRI).
+         El <noscript> mantiene los iconos si el JS está desactivado. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <!-- Hoja de Estilos Maestra -->
     <link rel="stylesheet" href="style.css">
@@ -85,7 +93,7 @@
         <section class="hero-section">
             <div class="hero-bg-overlay"></div>
             <!-- Imagen sugerida: ambiente corporativo moderno o entrevista -->
-            <img fetchpriority="high" decoding="async" src="assets/careers-bg.jpg" alt="Entorno Profesional" class="hero-bg-img" width="1920" height="1080">
+            <img fetchpriority="high" decoding="async" src="assets/careers-bg.jpg" srcset="assets/careers-bg-960.jpg 960w, assets/careers-bg.jpg 1920w" sizes="100vw" alt="Entorno Profesional" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Licenciatura en Ingeniería en Software Full Stack · Impacto Profesional</span>
@@ -168,7 +176,7 @@
                             <li class="process-item">
                                 <span class="process-number">01</span>
                                 <div class="process-info">
-                                    <h4 style="color: white; font-size: 1.2rem;">Optimización de Perfil</h4>
+                                    <h3 style="color: white; font-size: 1.2rem;">Optimización de Perfil</h3>
                                     <p style="color: #94a3b8;">Revisión profunda de CV y LinkedIn para pasar los filtros
                                         ATS (Applicant Tracking Systems) automáticos.</p>
                                 </div>
@@ -176,8 +184,8 @@
                             <li class="process-item">
                                 <span class="process-number">02</span>
                                 <div class="process-info">
-                                    <h4 style="color: white; font-size: 1.2rem;">Entrevistas Simuladas (Mock Interviews)
-                                    </h4>
+                                    <h3 style="color: white; font-size: 1.2rem;">Entrevistas Simuladas (Mock Interviews)
+                                    </h3>
                                     <p style="color: #94a3b8;">Prácticas de "Whiteboard Coding" y entrevistas
                                         conductuales con ingenieros senior reales.</p>
                                 </div>
@@ -185,7 +193,7 @@
                             <li class="process-item">
                                 <span class="process-number">03</span>
                                 <div class="process-info">
-                                    <h4 style="color: white; font-size: 1.2rem;">Negociación de Ofertas</h4>
+                                    <h3 style="color: white; font-size: 1.2rem;">Negociación de Ofertas</h3>
                                     <p style="color: #94a3b8;">Te enseñamos a entender tu valor de mercado y a negociar
                                         salario y beneficios con confianza.</p>
                                 </div>
@@ -386,6 +394,9 @@
                             <form id="voc-form" action="https://formsubmit.co/hola@meridianitec.com" method="POST">
                                 <input type="hidden" name="_subject" value="Lead Test Vocacional - Meridian">
                                 <input type="hidden" name="_captcha" value="false">
+                                <!-- Honeypot antiabuso: invisible para personas, los bots lo rellenan.
+                                     tabindex/aria-hidden lo sacan del recorrido de teclado y del lector. -->
+                                <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true" autocomplete="off">
                                 <input type="hidden" name="_template" value="table">
                                 <div class="form-group">
                                     <label for="voc-name">Nombre</label>
@@ -396,6 +407,7 @@
                                     <input type="email" id="voc-email" name="email" required placeholder="tu@correo.com">
                                 </div>
                                 <button type="submit" class="btn btn-purple">Ver plan de estudios detallado</button>
+                                <p class="form-privacy-note">Al enviar aceptas nuestro <a href="privacy.html">Aviso de Privacidad</a>.</p>
                             </form>
                         </div>
                     </div>
@@ -434,7 +446,7 @@
 
                 <div class="footer-links">
                     <div class="link-column">
-                        <h4>Instituto</h4>
+                        <h2>Instituto</h2>
                         <ul>
                             <li><a href="institute.html">Filosofía</a></li>
                             <li><a href="experience.html">Experiencia</a></li>
@@ -442,7 +454,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Academia</h4>
+                        <h2>Academia</h2>
                         <ul>
                             <li><a href="programs.html">Programas</a></li>
                             <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
@@ -451,7 +463,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Contacto</h4>
+                        <h2>Contacto</h2>
                         <ul>
                             <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>

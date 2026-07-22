@@ -7,6 +7,7 @@
     <meta name="description"
         content="Vida estudiantil en Meridian: Hackathons, clubes de especialización, mentorías y una comunidad global de ingenieros.">
     <title>Meridian Institute of Technology | La Experiencia</title>
+    <link rel="canonical" href="https://meridianitec.com/experience.html">
     <!-- Open Graph / Social Media Metatags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meridianitec.com/experience.html">
@@ -20,12 +21,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"></noscript>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome — carga NO bloqueante. Son 100 KB de iconos decorativos que
+         estaban en la ruta crítica: el render-delay era el 84 % del LCP.
+         integrity+crossorigin verifican el archivo servido por el CDN (SRI).
+         El <noscript> mantiene los iconos si el JS está desactivado. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <!-- Hoja de Estilos Maestra -->
     <link rel="stylesheet" href="style.css">
@@ -86,7 +94,7 @@
         <section class="hero-section">
             <div class="hero-bg-overlay"></div>
             <!-- Imagen sugerida: grupo diverso de estudiantes colaborando o riendo -->
-            <img fetchpriority="high" decoding="async" src="assets/experience-bg.jpg" alt="Comunidad Meridian" class="hero-bg-img" width="1920" height="1080">
+            <img fetchpriority="high" decoding="async" src="assets/experience-bg.jpg" srcset="assets/experience-bg-960.jpg 960w, assets/experience-bg.jpg 1920w" sizes="100vw" alt="Comunidad Meridian" class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-content">
                 <span class="hero-eyebrow">Student Life</span>
@@ -121,7 +129,7 @@
                     <!-- Club 1: AI -->
                     <article class="experience-card bg-image" style="background-image: url('assets/club-ai.jpg');">
                         <div class="card-overlay">
-                            <span class="card-tag" style="background: rgba(138, 21, 56, 0.8);">Trending</span>
+                            <span class="card-tag" style="background: rgba(121, 29, 26, 0.8);">Trending</span>
                             <h3>AI & Data Science</h3>
                             <p>Exploración de machine learning, modelos predictivos y ética en IA.</p>
                         </div>
@@ -156,7 +164,7 @@
 
                 <div class="split-layout" style="margin-bottom: 4rem;">
                     <div class="text-content">
-                        <span class="tag" style="color: var(--primary-color); background: rgba(138, 21, 56, 0.1);">El
+                        <span class="tag" style="color: var(--primary-color); background: rgba(121, 29, 26, 0.1);">El
                             Inicio</span>
                         <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">La Semana
                             Cero</h3>
@@ -182,7 +190,7 @@
                             style="border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                     </div>
                     <div class="text-content">
-                        <span class="tag" style="color: var(--primary-color); background: rgba(138, 21, 56, 0.1);">El
+                        <span class="tag" style="color: var(--primary-color); background: rgba(121, 29, 26, 0.1);">El
                             Cierre</span>
                         <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Demo Day &
                             Feria de Proyectos</h3>
@@ -207,7 +215,7 @@
                     <div class="card-feature" style="background: white;">
                         <i class="fa-solid fa-user-tie"
                             style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                        <h4>Academic Success Coach</h4>
+                        <h3>Academic Success Coach</h3>
                         <p style="font-size: 0.9rem; color: #64748b;">Te ayuda a mantener el ritmo, gestionar el tiempo
                             y superar bloqueos de aprendizaje.</p>
                     </div>
@@ -250,7 +258,7 @@
 
                 <div class="footer-links">
                     <div class="link-column">
-                        <h4>Instituto</h4>
+                        <h2>Instituto</h2>
                         <ul>
                             <li><a href="institute.html">Filosofía</a></li>
                             <li><a href="experience.html">Experiencia</a></li>
@@ -258,7 +266,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Academia</h4>
+                        <h2>Academia</h2>
                         <ul>
                             <li><a href="programs.html">Programas</a></li>
                             <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
@@ -267,7 +275,7 @@
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Contacto</h4>
+                        <h2>Contacto</h2>
                         <ul>
                             <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                             <li>CDMX, México</li>

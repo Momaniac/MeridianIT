@@ -7,6 +7,7 @@
     <meta name="description"
         content="Meridian Institute of Technology: Ingeniería para la próxima generación de talento global. Educación rigurosa y conectada con la industria.">
     <title>Meridian Institute of Technology | Home</title>
+    <link rel="canonical" href="https://meridianitec.com/index.html">
     <!-- Open Graph / Social Media Metatags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meridianitec.com/index.html">
@@ -20,12 +21,19 @@
     <!-- Google Fonts (Tipografía Tech/Editorial) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@300;400;600&display=swap"></noscript>
 
-    <!-- FontAwesome para Íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome — carga NO bloqueante. Son 100 KB de iconos decorativos que
+         estaban en la ruta crítica: el render-delay era el 84 % del LCP.
+         integrity+crossorigin verifican el archivo servido por el CDN (SRI).
+         El <noscript> mantiene los iconos si el JS está desactivado. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <!-- Hoja de Estilos Maestra -->
     <link rel="stylesheet" href="style.css">
@@ -87,7 +95,7 @@
              resto de páginas conserva el hero alineado a la izquierda. -->
         <section class="hero-section hero-cover">
             <div class="hero-bg-overlay"></div>
-            <img fetchpriority="high" decoding="async" src="assets/hero-bg.jpg" alt="Campus Tecnológico Meridian"
+            <img fetchpriority="high" decoding="async" src="assets/hero-bg.jpg" srcset="assets/hero-bg-960.jpg 960w, assets/hero-bg.jpg 1920w" sizes="100vw" alt="Campus Tecnológico Meridian"
                 class="hero-bg-img" width="1920" height="1080">
 
             <div class="container hero-cover-content">
@@ -246,21 +254,21 @@
                             <li class="process-item">
                                 <span class="process-number">01</span>
                                 <div class="process-info">
-                                    <h4>Teoría Fundamentada</h4>
+                                    <h3>Teoría Fundamentada</h3>
                                     <p>Ciencias de la computación y lógica algorítmica.</p>
                                 </div>
                             </li>
                             <li class="process-item">
                                 <span class="process-number">02</span>
                                 <div class="process-info">
-                                    <h4>Certificación Técnica</h4>
+                                    <h3>Certificación Técnica</h3>
                                     <p>Validación de conocimientos con estándares globales.</p>
                                 </div>
                             </li>
                             <li class="process-item">
                                 <span class="process-number">03</span>
                                 <div class="process-info">
-                                    <h4>Ejecución Aplicada</h4>
+                                    <h3>Ejecución Aplicada</h3>
                                     <p>Construcción de software real en entornos de producción.</p>
                                 </div>
                             </li>
@@ -505,7 +513,7 @@
                             <div class="slider-track">
                                 <div class="slider-track-fill"></div>
                             </div>
-                            <input type="range" id="avg-slider" min="6.0" max="10.0" step="0.1" value="8.0">
+                            <input type="range" id="avg-slider" aria-label="Promedio académico general" aria-valuemin="6.0" aria-valuemax="10.0" min="6.0" max="10.0" step="0.1" value="8.0">
                         </div>
                         <div class="avg-display">
                             <div class="avg-number" id="avg-value">8.0</div>
@@ -554,6 +562,9 @@
                             <form id="scholarship-form" action="https://formsubmit.co/hola@meridianitec.com" method="POST">
                                 <input type="hidden" name="_subject" value="Lead Calculadora de Beca - Meridian">
                                 <input type="hidden" name="_captcha" value="false">
+                                <!-- Honeypot antiabuso: invisible para personas, los bots lo rellenan.
+                                     tabindex/aria-hidden lo sacan del recorrido de teclado y del lector. -->
+                                <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true" autocomplete="off">
                                 <input type="hidden" name="_template" value="table">
                                 <input type="hidden" name="programa_interes" value="">
                                 <input type="hidden" name="promedio" value="">
@@ -573,6 +584,7 @@
                                     <input type="tel" id="scholar-phone" name="whatsapp" required placeholder="+52 55 1234 5678">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Enviar y recibir mi tabulador</button>
+                                <p class="form-privacy-note">Al enviar aceptas nuestro <a href="privacy.html">Aviso de Privacidad</a>.</p>
                             </form>
                         </div>
                     </div>
@@ -617,7 +629,7 @@
                 </div>
 
                 <div class="link-column">
-                    <h4>Instituto</h4>
+                    <h2>Instituto</h2>
                     <ul>
                         <li><a href="institute.html">El Instituto</a></li>
                         <li><a href="experience.html">La Experiencia</a></li>
@@ -626,7 +638,7 @@
                 </div>
 
                 <div class="link-column">
-                    <h4>Academia</h4>
+                    <h2>Academia</h2>
                     <ul>
                         <li><a href="programs.html">Oferta Académica</a></li>
                         <li><a href="maestria-ejecutiva.html">Maestría Ejecutiva</a></li>
@@ -636,7 +648,7 @@
                 </div>
 
                 <div class="link-column">
-                    <h4>Admisiones</h4>
+                    <h2>Admisiones</h2>
                     <ul>
                         <li><a href="admissions.html">Proceso de Admisión</a></li>
                         <li><a href="index.html#calculadora-becas">Calculadora de Becas</a></li>
@@ -645,7 +657,7 @@
                 </div>
 
                 <div class="link-column">
-                    <h4>Contacto</h4>
+                    <h2>Contacto</h2>
                     <ul>
                         <li><a href="mailto:hola@meridianitec.com">hola@meridianitec.com</a></li>
                         <li>CDMX, México</li>
