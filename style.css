@@ -3003,6 +3003,15 @@ body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .hero-section {
     font-size: 0.85rem;
 }
 
+/* Badges que vienen con fondo blanco y texto oscuro (Swift, Flutter/ATC).
+   No se les puede quitar el fondo: el texto quedaría invisible sobre el navy.
+   Se les da una tarjeta blanca completa para que se vean deliberados y no
+   como un recorte pegado sobre el fondo oscuro. */
+.badge-img-light {
+    background: #ffffff;
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
 /* Enlace de sección centrado, para cerrar cada bloque resumen del index */
 .link-arrow-center {
     justify-content: center;
