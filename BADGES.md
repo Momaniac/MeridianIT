@@ -1,11 +1,11 @@
 # Badges de certificación
 
-Estado de las insignias de certificación del sitio.
+Estado de las insignias del sitio. **Los 19 badges están aplicados**; no queda ninguno pendiente.
 
-## ✅ Licenciatura — 14 certificaciones (aplicadas)
+## Licenciatura — 14 certificaciones
 
-Todas están en `badges/` y se muestran en el carrusel de `certifications.html`,
-en los chips de `index.html` y en la tarjeta de `programs.html`.
+Carrusel animado en `certifications.html`. También aparecen como chips de texto
+en `index.html` y en la tarjeta de `programs.html`.
 
 | # | Archivo | Certificación |
 |---|---|---|
@@ -26,51 +26,44 @@ en los chips de `index.html` y en la tarjeta de `programs.html`.
 
 Son 14 porque Scrum aporta dos niveles: Foundation y Master.
 
-### Nota sobre el badge de Flutter
-
 La insignia de ATC (Advanced Training Consultants) es **genérica para todos sus
 certificados de Android**: el título específico solo aparece en el documento
-oficial. Por eso la imagen muestra "Android" y no "Flutter".
+oficial. Por eso la imagen del badge de Flutter muestra "Android".
 
-## ⏳ Maestría Ejecutiva — 5 certificaciones (badges pendientes)
+## Maestría Ejecutiva — 5 certificaciones
 
-`maestria-ejecutiva.html` las nombra en la sección "Certificaciones Industriales
-Integradas", pero **todavía no tienen imagen**. No se muestran badges de la
-Maestría en ninguna parte hasta conseguirlos.
+Rejilla estática en `maestria-ejecutiva.html`, después de "El Programa en Cifras".
+No es carrusel: con 5 badges caben todos a la vista. El detalle formal (emisores,
+alcance de módulos) sigue en la sección 9 de la Propuesta Integral.
 
-| Certificación | Emisor |
-|---|---|
-| PCEP – Certified Entry-Level Python Programmer | Python Institute |
-| Microsoft Certified: Azure Data Fundamentals (DP-900) | Microsoft |
-| Microsoft Certified: Azure AI Fundamentals (AI-900) | Microsoft |
-| CertNexus CAIP – Certified Artificial Intelligence Practitioner | CertNexus |
-| CertNexus AIBIZ – AI for Business Professionals | CertNexus |
+| # | Archivo | Certificación | Emisor |
+|---|---|---|---|
+| 1 | `pcep.png` | PCEP – Certified Entry-Level Python Programmer | OpenEDG Python Institute |
+| 2 | `azure-data-fundamentals-dp900.png` | Azure Data Fundamentals (DP-900) | Microsoft |
+| 3 | `azure-ai-fundamentals-ai900.png` | Azure AI Fundamentals (AI-900) | Microsoft |
+| 4 | `certnexus-caip.png` | Certified Artificial Intelligence Practitioner | CertNexus |
+| 5 | `certnexus-aibiz.png` | AIBIZ – AI for Business Professionals | CertNexus |
 
-### Especificaciones para los que faltan
+## Para añadir badges nuevos
 
-**La tarjeta del carrusel es siempre blanca**, así que sirve cualquier badge
-oficial tal como lo entregue el emisor. No hace falta editarlos.
+**La tarjeta es siempre blanca**, así que sirve cualquier badge oficial tal como
+lo entregue el emisor. No hay que editarlos ni pedirlos en un formato concreto.
 
 | Requisito | Valor |
 |---|---|
 | Formato | PNG o JPEG, como venga del emisor |
 | Fondo | Transparente **o** blanco — los dos funcionan |
 | Tamaño | ~400 px por lado (se muestran a 110 × 110) |
-| Proporción | Cuadrada de preferencia; si no, se ajusta sin deformarse |
 | Peso | Menos de 100 KB |
 | Contraste | Deben leerse **sobre blanco** |
 
-Lo único que hay que evitar es un badge blanco sobre transparente (sin bordes),
-porque desaparecería sobre la tarjeta blanca. Es un caso raro: los emisores
-oficiales entregan badges a color.
+Lo único que hay que evitar es un badge blanco sobre transparente y sin bordes,
+porque desaparecería sobre la tarjeta. Es un caso raro: los emisores entregan
+badges a color.
 
-Déjalos en la raíz del proyecto con el nombre que traigan y yo los organizo.
-
-## Convención de nombres
-
-Minúsculas, sin espacios ni acentos, separado por guiones. Los espacios y el
-guion largo (`–`) obligan a codificar la URL y rompen enlaces en algunos
-servidores, por eso se renombraron los archivos originales.
+Déjalos en la raíz del proyecto con el nombre que traigan y se organizan desde ahí.
+Los nombres finales van en minúsculas, sin espacios ni acentos: los espacios y el
+guion largo (`–`) obligan a codificar la URL y rompen enlaces en algunos servidores.
 
 ## Antes de publicidad impresa o campañas: revisar permisos de uso
 

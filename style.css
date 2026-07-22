@@ -3009,6 +3009,27 @@ body:has(.sticky-promo-bar:not(.promo-bar-hidden)) .hero-section {
     font-size: 0.85rem;
 }
 
+/* Rejilla estática de badges, para cuando son pocos y caben todos a la vista
+   (la Maestría son 5). Reutiliza la tarjeta blanca de .badge-img; no lleva
+   animación porque no hay nada que desplazar. */
+.badge-static-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1rem;
+}
+
+/* Sobre fondo claro la etiqueta necesita más contraste que en el carrusel oscuro */
+.badge-static-grid .badge-label {
+    color: var(--text-main);
+}
+
+/* Y la tarjeta blanca necesita un borde visible cuando el fondo también es claro */
+.badge-static-grid .badge-img {
+    border-color: #e5e7eb;
+}
+
 /* Enlace de sección centrado, para cerrar cada bloque resumen del index */
 .link-arrow-center {
     justify-content: center;

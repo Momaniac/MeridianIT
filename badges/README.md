@@ -30,7 +30,12 @@ actualiza ambos sets o el bucle dará un salto visible. El segundo set lleva
 `aria-hidden="true"` para que los lectores de pantalla no anuncien las
 certificaciones dos veces.
 
-## Pendientes
+## Contenido
 
-Faltan los 5 badges de la Maestría Ejecutiva (PCEP, Azure DP-900, Azure AI-900,
-CertNexus CAIP y CertNexus AIBIZ). Lista completa en [`../BADGES.md`](../BADGES.md).
+19 badges, todos aplicados:
+
+- **14 de la Licenciatura** → carrusel animado en `certifications.html`
+- **5 de la Maestría** (`pcep`, `azure-*`, `certnexus-*`) → rejilla estática en
+  `maestria-ejecutiva.html`. Con tan pocos no se usa carrusel: caben todos a la vista.
+
+Inventario completo en [`../BADGES.md`](../BADGES.md).
