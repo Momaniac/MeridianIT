@@ -32,11 +32,6 @@ La insignia de ATC (Advanced Training Consultants) es **genérica para todos sus
 certificados de Android**: el título específico solo aparece en el documento
 oficial. Por eso la imagen muestra "Android" y no "Flutter".
 
-Es el único archivo que **no tiene fondo transparente** (viene en JPEG con fondo
-blanco y proporción vertical 383×522). Sobre el fondo oscuro del carrusel se ve
-como un bloque blanco, distinto al resto. Si en algún momento ATC entrega una
-versión PNG con transparencia, se sustituye y queda uniforme.
-
 ## ⏳ Maestría Ejecutiva — 5 certificaciones (badges pendientes)
 
 `maestria-ejecutiva.html` las nombra en la sección "Certificaciones Industriales
@@ -53,13 +48,21 @@ Maestría en ninguna parte hasta conseguirlos.
 
 ### Especificaciones para los que faltan
 
+**La tarjeta del carrusel es siempre blanca**, así que sirve cualquier badge
+oficial tal como lo entregue el emisor. No hace falta editarlos.
+
 | Requisito | Valor |
 |---|---|
-| Formato | PNG con **fondo transparente** |
-| Tamaño | 400 × 400 px (se muestran a 110 × 110) |
-| Proporción | Cuadrada |
+| Formato | PNG o JPEG, como venga del emisor |
+| Fondo | Transparente **o** blanco — los dos funcionan |
+| Tamaño | ~400 px por lado (se muestran a 110 × 110) |
+| Proporción | Cuadrada de preferencia; si no, se ajusta sin deformarse |
 | Peso | Menos de 100 KB |
-| Contraste | Deben leerse sobre fondo oscuro (`#081127`) |
+| Contraste | Deben leerse **sobre blanco** |
+
+Lo único que hay que evitar es un badge blanco sobre transparente (sin bordes),
+porque desaparecería sobre la tarjeta blanca. Es un caso raro: los emisores
+oficiales entregan badges a color.
 
 Déjalos en la raíz del proyecto con el nombre que traigan y yo los organizo.
 

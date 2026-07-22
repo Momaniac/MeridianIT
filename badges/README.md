@@ -1,15 +1,26 @@
 # badges/
 
-Insignias oficiales de las 14 certificaciones que integra la Licenciatura en
+Insignias oficiales de las certificaciones que integra la Licenciatura en
 Ingeniería de Software Full Stack. Se muestran en el carrusel de
 `certifications.html`.
 
+## La tarjeta es siempre blanca
+
+`.badge-img` fija `background: #ffffff` **a propósito**. Los emisores entregan
+los badges en formatos impredecibles: unos con fondo transparente, otros en
+JPEG con fondo blanco y texto oscuro (Swift, ATC). Con la tarjeta blanca
+cualquiera de los dos encaja sin tratamiento especial.
+
+No añadas clases ni variantes por badge: si uno se ve mal, la solución es
+cambiar el archivo, no el CSS.
+
 ## Convención
 
-- **PNG con fondo transparente**, cuadrado, 400 × 400 px, menos de 100 KB.
-- Deben leerse sobre fondo oscuro (`#081127`): el carrusel va en sección `dark-bg`.
+- PNG o JPEG, tal como lo entregue el emisor. Fondo transparente o blanco, da igual.
+- ~400 px por lado, menos de 100 KB. Se muestran a 110 × 110 px.
+- Deben leerse **sobre blanco**.
 - Nombres en minúsculas, sin espacios ni acentos, separados por guiones.
-  Renombrar un archivo rompe la imagen en el sitio: el `src` del HTML debe coincidir.
+  Renombrar un archivo rompe la imagen: el `src` del HTML debe coincidir.
 
 ## Al añadir o quitar un badge
 
@@ -18,12 +29,6 @@ El carrusel necesita **dos sets idénticos** de slides, porque la animación
 actualiza ambos sets o el bucle dará un salto visible. El segundo set lleva
 `aria-hidden="true"` para que los lectores de pantalla no anuncien las
 certificaciones dos veces.
-
-## Excepción
-
-`flutter-certified-application-developer.jpg` es el único JPEG: viene de ATC sin
-transparencia y en formato vertical. Convertirlo a PNG lo hacía pesar 6× más sin
-ganar nada, así que se conserva en JPEG. Ver detalle en [`../BADGES.md`](../BADGES.md).
 
 ## Pendientes
 
