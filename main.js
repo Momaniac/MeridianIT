@@ -62,17 +62,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nota: El CSS actual oculta .nav-list en móvil por defecto.
     // Necesitamos añadir una clase 'active' en CSS para mostrarlo cuando se haga click.
     if (menuToggle && navList) {
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
+        // El toggle es un disclosure: aria-expanded refleja el estado para
+        // lectores de pantalla.
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-controls', 'primary-nav');
+        if (!navList.id) navList.id = 'primary-nav';
 
-            // Cambia el icono de barras a X
+        function setMenu(open) {
+            navList.classList.toggle('active', open);
+            menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             const icon = menuToggle.querySelector('i');
-            if (navList.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                icon.classList.toggle('fa-bars', !open);
+                icon.classList.toggle('fa-xmark', open);
+            }
+            // Al abrir con teclado, el foco entra al menú; los enlaces están
+            // antes del toggle en el DOM y si no, quedarían solo tras Shift+Tab.
+            if (open) {
+                const first = navList.querySelector('a');
+                if (first) first.focus();
+            }
+        }
+
+        menuToggle.addEventListener('click', () => {
+            setMenu(!navList.classList.contains('active'));
+        });
+
+        // Escape cierra el menú y devuelve el foco al botón (patrón esperado).
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navList.classList.contains('active')) {
+                setMenu(false);
+                menuToggle.focus();
             }
         });
     }

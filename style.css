@@ -3234,3 +3234,13 @@ textarea:focus {
 .voc-gated-form .form-privacy-note {
     color: rgba(255, 255, 255, 0.75);
 }
+
+/* Foco de teclado para los controles hechos con <div> de la calculadora de
+   becas y el test vocacional. conversion.js los hace enfocables (role=button
+   + tabindex); esta regla les da un anillo de marca visible al tabular. */
+.program-option:focus-visible,
+.modality-btn:focus-visible,
+.voc-answer:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

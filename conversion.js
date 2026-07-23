@@ -11,6 +11,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
+    // 0. ACCESIBILIDAD DE TECLADO PARA CONTROLES <div>
+    // =========================================
+    // La calculadora de becas (.program-option, .modality-btn) y el test
+    // vocacional (.voc-answer) están hechos con <div> clicables. Sin esto un
+    // usuario de teclado no puede operarlos (WCAG 2.1.1, nivel A): no reciben
+    // foco ni responden a Enter/Espacio. Se les da rol de botón, orden de
+    // tabulación y activación por teclado; el manejador de 'click' que ya existe
+    // hace el resto. Solo se activa con JS, pero estas herramientas ya dependen
+    // de JS por completo, así que no se pierde nada sin él.
+    document.querySelectorAll('.program-option, .modality-btn, .voc-answer').forEach(el => {
+        if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
+        if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+        el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                el.click();
+            }
+        });
+    });
+
+    // =========================================
     // 1. TOAST DE CONFIRMACIÓN — Solo acciones reales
     // =========================================
     // Muestra una tarjeta de confirmación cuando el usuario completa una
